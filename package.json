@@ -1,0 +1,28 @@
+{
+  "name": "subliminal",
+  "version": "1.0.0",
+  "description": "Blog Site",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "start" : "node server.js"
+  },
+  "type" : "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1AryanMishra/Subliminal.git"
+  },
+  "author": "Aryan Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1AryanMishra/Subliminal/issues"
+  },
+  "homepage": "https://github.com/1AryanMishra/Subliminal#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "firebase": "^9.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

@@ -1,0 +1,26 @@
+.TopicCard{
+    box-shadow: 0 0 1em #fff inset;
+    min-width: 100%;
+    transition: 0.5s ease;
+    margin: 0 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    scroll-snap-align: center;
+    padding: 1rem;
+
+    .TopicReadBtn{
+        margin-top: 1em;
+        margin-left: auto;
+    }
+}
+
+.TopicCard:hover, .TopicCard:focus{
+    box-shadow: 0 0 1.2em #fff;
+}
+
+@media (min-width: 950px){
+
+    .TopicCard{
+        min-width: 100%;
+    }
+}

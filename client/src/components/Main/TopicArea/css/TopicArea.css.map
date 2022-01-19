@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,MAAM,EAAE,IAAI;EACZ,UAAU,EAAE,YAAY;EACxB,OAAO,EAAE,GAAG;EACZ,SAAS,EAAE,GAAG;EACd,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,aAAa;CAQ3B;;AAdD,AAQI,UARM,CAQN,WAAW,CAAA;EACP,MAAM,EAAE,QAAQ;EAChB,UAAU,EAAE,kBAAkB;EAC9B,OAAO,EAAE,MAAM;EACf,UAAU,EAAE,MAAM;CACrB",
+    "sources": [
+        "TopicArea.scss"
+    ],
+    "names": [],
+    "file": "TopicArea.css"
+}

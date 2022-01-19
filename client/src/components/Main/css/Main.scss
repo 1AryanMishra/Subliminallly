@@ -1,0 +1,24 @@
+.MainContainer{
+    box-shadow: 0 0 1em #fff;
+    margin: 1em 0;
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width:950px){
+    .MainContainer{
+        flex-direction: row;
+
+        #Main-Content-Separator{
+            display: none;
+        }
+
+        .MoreTopicsAreaContainer{
+            max-width: 30%;
+        }
+
+        .ContentContainer{
+            margin: auto 1rem;
+        }
+    }
+}

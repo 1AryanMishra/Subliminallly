@@ -1,0 +1,66 @@
+.MainHeader{
+    display: flex;
+    flex-flow: column nowrap;
+    box-shadow: 0 0 1em #fff;
+    box-shadow: 0 0 1em #fff inset, 0 0 1em #909090;
+    
+    .Logo{
+        margin: 0.4rem 0;
+        padding: 0.3rem;
+        text-align: center;
+        color: #fff;
+        font-weight: bold;
+        font-style: oblique;
+    }
+
+    .TopicSectionTypeArea{
+        display: flex;
+        padding: 0.2em 0;
+        background: #909090;
+        justify-content: space-evenly;
+
+        #MidTopicSectionType{
+            margin: 0 0.1rem;
+        }
+        
+        .TopicSectionType{
+            width: 100%;
+            transition: 0.2s ease;
+            background: rgba(240, 210, 250, 0.5);
+            padding: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: #595959;
+        }
+        
+        .TopicSectionType:hover, .TopicSectionType:focus{
+            box-shadow: 0 0 1em #fff;
+            color: #fff;
+        }
+    }
+}
+
+@media (min-width:650px){
+
+    .MainHeader{
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .Logo{
+            flex: 1;
+        }
+
+        .TopicSectionTypeArea{
+            background: none;
+            flex: 2;
+            box-shadow: 0 0 1rem #fff inset;
+            
+            .TopicSectionType{
+                font-size: 1.4rem;
+                align-content: center;
+                background: none;
+            }
+        }
+    }
+}

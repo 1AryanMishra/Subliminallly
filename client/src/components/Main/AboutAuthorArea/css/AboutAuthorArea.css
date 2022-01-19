@@ -1,0 +1,52 @@
+.AboutAuthorArea {
+  max-width: 90%;
+  padding: 1em;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.AboutAuthorArea .AuthorIntro {
+  margin: 0.5em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.AboutAuthorArea .AuthorIntro .AuthorName {
+  font-size: 1.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+}
+
+.AboutAuthorArea .AuthorIntro .AuthorDP {
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0 1em #909090 inset, 0 0 1em #fff;
+          box-shadow: 0 0 1em #909090 inset, 0 0 1em #fff;
+  padding: 2.5em;
+}
+
+.AboutAuthorArea .AuthorMoreInfo {
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: 1rem;
+  padding: 0.5rem;
+}
+
+.AboutAuthorArea .AuthorMoreInfo:hover, .AboutAuthorArea .AuthorMoreInfo:focus {
+  -webkit-box-shadow: 0 0 0.5em #909090, 0 0 0.5em red inset;
+          box-shadow: 0 0 0.5em #909090, 0 0 0.5em red inset;
+}
+/*# sourceMappingURL=AboutAuthorArea.css.map */

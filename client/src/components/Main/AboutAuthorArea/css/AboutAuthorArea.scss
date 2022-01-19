@@ -1,0 +1,39 @@
+.AboutAuthorArea{
+    max-width: 90%;
+    padding: 1em;
+    margin: auto;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .AuthorIntro{
+        margin: 0.5em 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+
+        .AuthorName{
+            font-size: 1.5rem;
+            margin-top: auto;
+            margin-bottom: auto;
+            text-align: center;
+        }
+
+        .AuthorDP{
+            border-radius: 100%;
+            box-shadow: 0 0 1em #909090 inset, 0 0 1em #fff;
+            padding: 2.5em;
+        }
+    }
+
+    .AuthorMoreInfo{
+        margin-top: 1rem;
+        margin-left: auto;
+        margin-right: 1rem;
+        padding: 0.5rem;
+    }
+
+    .AuthorMoreInfo:hover, .AuthorMoreInfo:focus{
+        box-shadow: 0 0 0.5em #909090, 0 0 0.5em red inset;
+    }
+
+}

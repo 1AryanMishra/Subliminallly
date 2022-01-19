@@ -1,0 +1,15 @@
+.TopicArea{
+    margin: auto;
+    box-shadow: 0 0 2em #fff;
+    padding: 1em;
+    max-width: 95%;
+    display: flex;
+    flex-flow: column nowrap;
+
+    .TopicTitle{
+        margin: 0.5rem 0;
+        box-shadow: 0 0 1em #fff inset;
+        padding: 0.5rem;
+        text-align: center;
+    }
+}

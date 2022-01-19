@@ -1,0 +1,89 @@
+.AuthorPage{
+    min-height: 100vh;
+    display: grid;
+
+    #SignOutSection{
+        margin-left: auto;
+
+        button{
+            margin: 1rem;
+            padding: 1rem;
+            color: #fff;
+            background: #909090;
+            font-weight: bold;
+            border: none;
+            outline: none;
+            font-size: 1.3rem;
+            box-shadow: 0 0 0.5rem #fff inset, 0 0 1rem #909090;
+            border-radius: 6px;
+        }
+        button:hover{
+            background : #908090;
+        }
+    }
+
+    .NotSignedIn{
+        margin: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        max-width: 90%;
+
+        h1{
+            margin: auto;
+        }
+
+        h3{
+            margin: 1rem auto;
+        }
+        
+        .SignInBtn{
+            transition: 0.2s ease;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 1rem auto;
+            padding: 1em 3em;
+            margin-top: 3em;
+            box-shadow: 0 0 1em #fff inset;
+        }
+    
+        .SignInBtn:hover, .SignInBtn:focus{
+            transform: scale(1.1);
+            box-shadow: 0 0 1em #fff;
+        }
+
+    }
+
+    .EditorSection{
+        margin: 1em 0;
+        display: flex;
+        flex-flow: column nowrap;
+
+        .ActivityPane{
+            margin-top: auto;
+            display: flex;
+            justify-content: space-around;
+            
+            .Activity{
+                transition: 0.5s ease;
+                margin: auto;
+                padding: 1em;
+                background: rgba(200, 200, 220, 0.6);
+                font-weight: bold;
+                font-size: 1.1rem;
+                color: #505050;
+                box-shadow: 0 0 1em #fff;
+            }
+
+            .Activity:hover, .Activity:focus{
+                transform: scale(1.2);
+                box-shadow: 0 0 1em #fff inset, 0 0 1em #fff;
+            }
+        }
+
+        .Playground{
+            margin: auto 0;
+            display: flex;
+            flex-flow: column nowrap;
+        }   
+    }
+}

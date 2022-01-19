@@ -1,0 +1,27 @@
+.FooterContainer {
+  margin-top: auto;
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+  background: rgba(200, 200, 200, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.FooterContainer .OtherPagesLinks {
+  font-weight: bold;
+  margin-left: 0.5em;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+.FooterContainer .OtherPagesLinks:hover, .FooterContainer .OtherPagesLinks:focus {
+  text-align: center;
+  -webkit-box-shadow: 0 0 1em white;
+          box-shadow: 0 0 1em white;
+}
+/*# sourceMappingURL=Footer.css.map */

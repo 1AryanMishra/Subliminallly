@@ -1,0 +1,19 @@
+.FooterContainer{
+    margin-top: auto;
+    box-shadow: 0 0 1em #fff;
+    background: rgba(200, 200, 200, 0.5);
+    display: flex;
+    flex-flow: column nowrap;
+
+    .OtherPagesLinks{
+        font-weight: bold;
+        margin-left: 0.5em;
+        text-decoration: none;
+        padding: 0.5em;
+    }
+
+    .OtherPagesLinks:hover, .OtherPagesLinks:focus{
+        text-align: center;
+        box-shadow: 0 0 1em rgba($color: #fff, $alpha: 1.0);
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,iBAAiB,CAAA;EACb,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,aAAa;CAU3B;;AAZD,AAII,iBAJa,CAIb,cAAc,CAAA;EACV,SAAS,EAAE,IAAI;CAClB;;AANL,AAQI,iBARa,CAQb,eAAe,CAAA;EACX,UAAU,EAAE,qBAAqB;EACjC,OAAO,EAAE,SAAS;CACrB",
+    "sources": [
+        "DemoTopicContent.scss"
+    ],
+    "names": [],
+    "file": "DemoTopicContent.css"
+}

@@ -1,0 +1,73 @@
+.SomeLatestComments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.SomeLatestComments .LoadMoreComments {
+  border-radius: 6px;
+  margin-top: 0.2em;
+  margin-right: 1em;
+  margin-left: auto;
+  padding: 0.5rem 1em;
+  -webkit-box-shadow: 0 0 1em #fff inset;
+          box-shadow: 0 0 1em #fff inset;
+}
+
+.SomeLatestComments .LoadMoreComments:hover {
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+}
+
+.SomeLatestComments .SomeLatestCommentsLabel {
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+.SomeLatestComments .Comment {
+  -webkit-box-shadow: 0 0 0.5em #fff;
+          box-shadow: 0 0 0.5em #fff;
+  margin: 0.3em;
+  padding: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+.SomeLatestComments .Comment .UserInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+.SomeLatestComments .Comment .UserInfo .UserDP {
+  margin: auto 1em;
+  padding: 1em;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0 1em #fff inset, 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff inset, 0 0 1em #fff;
+}
+
+.SomeLatestComments .Comment .UserInfo .UserName {
+  margin: auto;
+  margin-left: 0;
+  text-align: center;
+}
+
+.SomeLatestComments .Comment .UserComment {
+  font-weight: bold;
+  padding: 0.5em;
+}
+/*# sourceMappingURL=SomeLatestComments.css.map */

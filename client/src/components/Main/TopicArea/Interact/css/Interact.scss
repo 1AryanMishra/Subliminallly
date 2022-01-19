@@ -1,0 +1,18 @@
+.Interact{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    box-shadow: 0 0 1rem #fff;
+    
+    button{
+        background: #c4c4c4;
+        color: blue;
+        font-weight: bold;
+        transition: 0.2s ease;
+    }
+
+    button:hover{
+        transform: scale(1.1);
+    }
+}

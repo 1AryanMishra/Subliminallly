@@ -1,0 +1,53 @@
+.SomeLatestComments{
+    display: flex;
+    flex-flow: column nowrap;
+
+    .LoadMoreComments{
+        border-radius: 6px;
+        margin-top: 0.2em;
+        margin-right: 1em;
+        margin-left: auto;
+        padding: 0.5rem 1em;
+        box-shadow: 0 0 1em #fff inset;
+    }
+
+    .LoadMoreComments:hover{
+        box-shadow: 0 0 1em #fff;
+    }
+
+    .SomeLatestCommentsLabel{
+        font-size: 1.05rem;
+        font-weight: bold;
+    }
+
+    .Comment{
+        box-shadow: 0 0 0.5em #fff;
+        margin: 0.3em;
+        padding: 0.5em;
+        display: flex;
+        flex-flow: column nowrap;
+
+        .UserInfo{
+            display: flex;
+            flex-flow: row nowrap;
+
+            .UserDP{
+                margin: auto 1em;
+                padding: 1em;
+                border-radius: 100%;
+                box-shadow: 0 0 1em #fff inset, 0 0 1em #fff;
+            }
+
+            .UserName{
+                margin: auto;
+                margin-left: 0;
+                text-align: center;
+            }
+        }
+
+        .UserComment{
+            font-weight: bold;
+            padding: 0.5em;
+        }
+    }
+}

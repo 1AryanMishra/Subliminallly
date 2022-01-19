@@ -1,0 +1,87 @@
+.MoreTopicsArea{
+    margin: auto;
+    margin-top: 1em;
+    max-width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 0.5rem;
+    color: #555;
+    
+    h3{
+        margin-left: 1rem;
+    }
+
+    .GenreTypeArea{
+        margin: 0.5em auto;
+        max-width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+
+        .GenreLabelText{
+            text-align: center;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+        }
+
+        .AvailableGenres{
+            border-radius: 6px;
+            display: flex;
+            flex-flow: row nowrap;
+            overflow-x: scroll;
+            background: #fff;
+            
+            .GenreType{
+                transition: 0.5s ease;
+                border-radius: 6px;
+                margin: 0 0.5rem;
+                font-size: 0.8rem;
+                font-weight: bold;
+                text-align: center;
+                box-shadow: 0 0 1rem #909090;
+                padding: 0.2rem 1rem;
+            }
+
+            .GenreType:hover{
+                box-shadow: 0 0 1rem #000;
+            }
+        }
+
+    }
+
+    .TopicsArea{
+        display: flex;
+        flex-flow: row;
+        overflow: hidden;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        padding: 1em;
+    }
+}
+
+@media (min-width:950px){
+
+    .MoreTopicsArea{
+        box-shadow: 0 0 1rem #fff;
+        padding: 1rem;
+        margin: 0;
+        position: sticky;
+        top: 0;
+
+        .MidLine{
+            width: 80%;
+        }
+
+        .GenreTypeArea{
+            align-items: center;
+
+            .AvailableGenres{
+                padding: 0.5rem 0;
+                overflow-x: scroll;
+
+                .GenreType{
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.TopicCard {
+  -webkit-box-shadow: 0 0 1em #fff inset;
+          box-shadow: 0 0 1em #fff inset;
+  min-width: 100%;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  margin: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  scroll-snap-align: center;
+  padding: 1rem;
+}
+
+.TopicCard .TopicReadBtn {
+  margin-top: 1em;
+  margin-left: auto;
+}
+
+.TopicCard:hover, .TopicCard:focus {
+  -webkit-box-shadow: 0 0 1.2em #fff;
+          box-shadow: 0 0 1.2em #fff;
+}
+
+@media (min-width: 950px) {
+  .TopicCard {
+    min-width: 100%;
+  }
+}
+/*# sourceMappingURL=TopicCard.css.map */

@@ -1,0 +1,42 @@
+.AboutArea{
+    display: flex;
+    flex-direction: column;
+
+    #About{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #Developer{
+        margin: 1rem auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .SocialLinks{
+        margin: 1em 0;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+
+        img{
+            width: 10%;
+        }
+
+    }
+}
+
+
+@media (min-width: 950px){
+
+    .AboutArea{
+
+        .SocialLinks{
+
+            img{
+                width: 3%;
+            }
+        }
+    }
+}

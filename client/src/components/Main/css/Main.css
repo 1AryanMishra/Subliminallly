@@ -1,0 +1,31 @@
+.MainContainer {
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+  margin: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 950px) {
+  .MainContainer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .MainContainer #Main-Content-Separator {
+    display: none;
+  }
+  .MainContainer .MoreTopicsAreaContainer {
+    max-width: 30%;
+  }
+  .MainContainer .ContentContainer {
+    margin: auto 1rem;
+  }
+}
+/*# sourceMappingURL=Main.css.map */

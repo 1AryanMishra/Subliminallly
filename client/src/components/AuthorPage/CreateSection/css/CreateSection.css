@@ -1,0 +1,343 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+#CreateSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+}
+
+#CreateSection .AddTitle {
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+  padding: 1em 0;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#CreateSection .AddTitle .TitleControlBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#CreateSection .AddTitle .TitleInput {
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+  margin: auto;
+  font-size: 1.4rem;
+  padding: 0.2rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+#CreateSection .AddTitle .TitleInputHide, #CreateSection .AddTitle .MainTitleHide {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+#CreateSection .AddTitle .MainTitle {
+  margin: auto;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#CreateSection .AddContent {
+  margin: auto 0;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+}
+
+#CreateSection .AddContent .ContentTypeBtnsArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  width: 100%;
+  -webkit-box-shadow: 0 0 1em #fff inset;
+          box-shadow: 0 0 1em #fff inset;
+}
+
+#CreateSection .AddContent .ContentTypeBtnsArea .ContentBtn {
+  border-radius: 6px;
+  padding: 0.2rem 1rem;
+  margin: auto;
+}
+
+#CreateSection .AddContent .ContentLabel {
+  width: 50%;
+  text-align: center;
+  padding: 0.2rem;
+  font-weight: bold;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  font-size: 1.4rem;
+  color: #606060;
+  -webkit-box-shadow: 0 0 1em #fff inset;
+          box-shadow: 0 0 1em #fff inset;
+}
+
+#CreateSection .AddContent #ContentArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+  padding: 1rem 0;
+  width: 95%;
+}
+
+#CreateSection .AddContent #ContentArea .Content-Append-Area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  width: 100%;
+}
+
+#CreateSection .AddContent #ContentArea .Content-Append-Area .BtnsGrp {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#CreateSection .AddContent #ContentArea .Content-Append-Area .BtnsGrp .AppendBtn {
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  margin: auto;
+  -webkit-box-shadow: 0 0 0.5rem #909090;
+          box-shadow: 0 0 0.5rem #909090;
+}
+
+#CreateSection .AddContent #ContentArea .Content-Append-Area .BtnsGrp .AppendBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: 0 0 0.5em #606060;
+          box-shadow: 0 0 0.5em #606060;
+}
+
+#CreateSection .AddContent #ContentArea .Content-Append-Area .BtnsGrp .MiniContentPane {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#CreateSection .AddContent #ContentArea .ContentControlBtnsArea {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  margin: 0.2rem 0;
+}
+
+#CreateSection .AddContent #ContentArea .ContentControlBtnsArea .ContentRemovedLabel {
+  margin: 0.5rem auto;
+}
+
+#CreateSection .AddContent #ContentArea .ContentControlBtnsArea .ContentControlBtnHide {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  visibility: hidden;
+  width: 0;
+  overflow: hidden;
+}
+
+#CreateSection .AddContent #ContentArea .ContentControlBtnsArea .ContentControlBtn {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  -webkit-box-shadow: 0 0 0.5em #606060;
+          box-shadow: 0 0 0.5em #606060;
+  margin-right: 1rem;
+  padding: 0.2rem 1rem;
+  border-radius: 6px;
+}
+
+#CreateSection .AddContent #ContentArea .TextInputArea, #CreateSection .AddContent #ContentArea .ImageInputArea, #CreateSection .AddContent #ContentArea .VideoInputArea {
+  position: relative;
+  margin: 0.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+}
+
+#CreateSection .AddContent #ContentArea .TextInputArea .ContentInputArea, #CreateSection .AddContent #ContentArea .ImageInputArea .ContentInputArea, #CreateSection .AddContent #ContentArea .VideoInputArea .ContentInputArea {
+  max-width: 100%;
+  width: 100%;
+  font-size: 1.4rem;
+}
+
+#CreateSection .AddContent #ContentArea .ImgContent {
+  margin: auto;
+}
+
+#CreateSection .AddContent #ContentArea .ImageCreditHide, #CreateSection .AddContent #ContentArea .VideoCreditHide {
+  display: none;
+}
+
+#CreateSection .AddContent #ContentArea .ImageCreditInput, #CreateSection .AddContent #ContentArea .VideoCreditInput {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+#CreateSection .AddContent #ContentArea .ParaContent {
+  max-width: 100%;
+  font-size: 1.5rem;
+}
+
+#CreateSection .AddContent #ContentArea .VideoFrame {
+  margin: auto;
+  width: 20em;
+  height: 10em;
+  max-width: 100%;
+}
+
+#CreateSection .AddContent #ContentArea .VideoCredit, #CreateSection .AddContent #ContentArea .ImageCredit {
+  margin: 0.5rem auto;
+}
+
+#CreateSection .FinalisingBtns {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#CreateSection .FinalisingBtns .FinalisingBtn {
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 1em #fff;
+          box-shadow: 0 0 1em #fff;
+}
+
+#CreateSection .FinalisingBtns .FinalisingBtn:hover {
+  -webkit-box-shadow: 0 0 1em #606060;
+          box-shadow: 0 0 1em #606060;
+}
+
+#CreateSection .FinalisingBtnHide {
+  display: none;
+}
+
+#CreateSection .Final {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  border: 4px solid yellow;
+}
+
+#CreateSection .reset {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  border: 4px solid red;
+}
+
+#CreateSection .Post {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  border: 4px solid green;
+}
+
+#CreateSection .ResetArea {
+  margin: 1rem auto;
+  max-width: 90%;
+}
+
+#CreateSection .ResetArea h1 {
+  font-size: 1.5rem;
+  color: blueviolet;
+}
+
+#CreateSection .ResetArea #ResetConfirmationBtnsArea {
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+#CreateSection .ResetArea #ResetConfirmationBtnsArea button {
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 1rem #909090;
+          box-shadow: 0 0 1rem #909090;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+#CreateSection .ResetArea #ResetConfirmationBtnsArea #ResetY {
+  color: red;
+  border: 3px solid red;
+}
+
+#CreateSection .ResetArea #ResetConfirmationBtnsArea #ResetN {
+  color: blueviolet;
+  border: 3px solid blueviolet;
+}
+
+@media (min-width: 950px) {
+  .VideoFrame {
+    max-width: 100%;
+  }
+}
+/*# sourceMappingURL=CreateSection.css.map */

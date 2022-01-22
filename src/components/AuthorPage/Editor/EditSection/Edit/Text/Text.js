@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 
-import { CreateContext } from "../CreateSection";
+import { EditContext } from '../Edit';
+
 
 //Icons
 import { HiMenuAlt4 } from 'react-icons/hi';
@@ -12,8 +13,8 @@ import { IoArrowUndoOutline } from 'react-icons/io5';
 
 
 function Text({ContentID}){
-    const {content, setContent} = useContext(CreateContext);
-    const [para, setPara] = useState(content[ContentID].content || '');
+    const {content, setContent} = useContext(EditContext);
+    const [para, setPara] = useState(content[ContentID].content || "");
     const [changePara, setChangePara] = useState(() => {
         if(para === ''){
             return true;

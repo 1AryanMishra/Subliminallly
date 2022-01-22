@@ -15,7 +15,7 @@ img {
   height: 100%;
 }
 
-#CreateSection {
+.Playground {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   overflow: hidden;
@@ -28,7 +28,7 @@ img {
           flex-flow: column nowrap;
 }
 
-#CreateSection .AddTitle {
+.Playground .AddTitle {
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;
   padding: 1em 0;
@@ -38,13 +38,13 @@ img {
   display: flex;
 }
 
-#CreateSection .AddTitle .TitleControlBtn {
+.Playground .AddTitle .TitleControlBtn {
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
 
-#CreateSection .AddTitle .TitleInput {
+.Playground .AddTitle .TitleInput {
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;
   margin: auto;
@@ -54,19 +54,19 @@ img {
   text-align: center;
 }
 
-#CreateSection .AddTitle .TitleInputHide, #CreateSection .AddTitle .MainTitleHide {
+.Playground .AddTitle .TitleInputHide, .Playground .AddTitle .MainTitleHide {
   height: 0;
   width: 0;
   visibility: hidden;
 }
 
-#CreateSection .AddTitle .MainTitle {
+.Playground .AddTitle .MainTitle {
   margin: auto;
   font-size: 2rem;
   text-align: center;
 }
 
-#CreateSection .AddContent {
+.Playground .AddContent {
   margin: auto 0;
   margin-top: 1rem;
   display: -webkit-box;
@@ -83,7 +83,7 @@ img {
           box-shadow: 0 0 1em #fff;
 }
 
-#CreateSection .AddContent .ContentTypeBtnsArea {
+.Playground .AddContent .ContentTypeBtnsArea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,13 +99,13 @@ img {
           box-shadow: 0 0 1em #fff inset;
 }
 
-#CreateSection .AddContent .ContentTypeBtnsArea .ContentBtn {
+.Playground .AddContent .ContentTypeBtnsArea .ContentBtn {
   border-radius: 6px;
   padding: 0.2rem 1rem;
   margin: auto;
 }
 
-#CreateSection .AddContent .ContentLabel {
+.Playground .AddContent .ContentLabel {
   width: 50%;
   text-align: center;
   padding: 0.2rem;
@@ -118,7 +118,7 @@ img {
           box-shadow: 0 0 1em #fff inset;
 }
 
-#CreateSection .AddContent #ContentArea {
+.Playground .AddContent .ContentArea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,7 +132,7 @@ img {
   width: 95%;
 }
 
-#CreateSection .AddContent #ContentArea .Content-Append-Area {
+.Playground .AddContent .ContentArea .Content-Append-Area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -143,7 +143,7 @@ img {
   width: 100%;
 }
 
-#CreateSection .AddContent #ContentArea .Content-Append-Area .BtnsGrp {
+.Playground .AddContent .ContentArea .Content-Append-Area .BtnsGrp {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -154,7 +154,7 @@ img {
           flex-direction: column;
 }
 
-#CreateSection .AddContent #ContentArea .Content-Append-Area .BtnsGrp .AppendBtn {
+.Playground .AddContent .ContentArea .Content-Append-Area .BtnsGrp .AppendBtn {
   border: none;
   outline: none;
   border-radius: 6px;
@@ -164,14 +164,14 @@ img {
           box-shadow: 0 0 0.5rem #909090;
 }
 
-#CreateSection .AddContent #ContentArea .Content-Append-Area .BtnsGrp .AppendBtn:hover {
+.Playground .AddContent .ContentArea .Content-Append-Area .BtnsGrp .AppendBtn:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 0 0.5em #606060;
           box-shadow: 0 0 0.5em #606060;
 }
 
-#CreateSection .AddContent #ContentArea .Content-Append-Area .BtnsGrp .MiniContentPane {
+.Playground .AddContent .ContentArea .Content-Append-Area .BtnsGrp .MiniContentPane {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,18 +180,18 @@ img {
           justify-content: space-evenly;
 }
 
-#CreateSection .AddContent #ContentArea .ContentControlBtnsArea {
+.Playground .AddContent .ContentArea .ContentControlBtnsArea {
   position: absolute;
   top: 1rem;
   right: 1rem;
   margin: 0.2rem 0;
 }
 
-#CreateSection .AddContent #ContentArea .ContentControlBtnsArea .ContentRemovedLabel {
+.Playground .AddContent .ContentArea .ContentControlBtnsArea .ContentRemovedLabel {
   margin: 0.5rem auto;
 }
 
-#CreateSection .AddContent #ContentArea .ContentControlBtnsArea .ContentControlBtnHide {
+.Playground .AddContent .ContentArea .ContentControlBtnsArea .ContentControlBtnHide {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   visibility: hidden;
@@ -199,7 +199,7 @@ img {
   overflow: hidden;
 }
 
-#CreateSection .AddContent #ContentArea .ContentControlBtnsArea .ContentControlBtn {
+.Playground .AddContent .ContentArea .ContentControlBtnsArea .ContentControlBtn {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   -webkit-box-shadow: 0 0 0.5em #606060;
@@ -209,7 +209,7 @@ img {
   border-radius: 6px;
 }
 
-#CreateSection .AddContent #ContentArea .TextInputArea, #CreateSection .AddContent #ContentArea .ImageInputArea, #CreateSection .AddContent #ContentArea .VideoInputArea {
+.Playground .AddContent .ContentArea .TextInputArea, .Playground .AddContent .ContentArea .ImageInputArea, .Playground .AddContent .ContentArea .VideoInputArea {
   position: relative;
   margin: 0.5rem 0;
   display: -webkit-box;
@@ -225,43 +225,43 @@ img {
   padding: 1rem;
 }
 
-#CreateSection .AddContent #ContentArea .TextInputArea .ContentInputArea, #CreateSection .AddContent #ContentArea .ImageInputArea .ContentInputArea, #CreateSection .AddContent #ContentArea .VideoInputArea .ContentInputArea {
+.Playground .AddContent .ContentArea .TextInputArea .ContentInputArea, .Playground .AddContent .ContentArea .ImageInputArea .ContentInputArea, .Playground .AddContent .ContentArea .VideoInputArea .ContentInputArea {
   max-width: 100%;
   width: 100%;
   font-size: 1.4rem;
 }
 
-#CreateSection .AddContent #ContentArea .ImgContent {
+.Playground .AddContent .ContentArea .ImgContent {
   margin: auto;
 }
 
-#CreateSection .AddContent #ContentArea .ImageCreditHide, #CreateSection .AddContent #ContentArea .VideoCreditHide {
+.Playground .AddContent .ContentArea .ImageCreditHide, .Playground .AddContent .ContentArea .VideoCreditHide {
   display: none;
 }
 
-#CreateSection .AddContent #ContentArea .ImageCreditInput, #CreateSection .AddContent #ContentArea .VideoCreditInput {
+.Playground .AddContent .ContentArea .ImageCreditInput, .Playground .AddContent .ContentArea .VideoCreditInput {
   margin-top: 0.5rem;
   text-align: center;
   font-size: 1rem;
 }
 
-#CreateSection .AddContent #ContentArea .ParaContent {
+.Playground .AddContent .ContentArea .ParaContent {
   max-width: 100%;
   font-size: 1.5rem;
 }
 
-#CreateSection .AddContent #ContentArea .VideoFrame {
+.Playground .AddContent .ContentArea .VideoFrame {
   margin: auto;
   width: 20em;
   height: 10em;
   max-width: 100%;
 }
 
-#CreateSection .AddContent #ContentArea .VideoCredit, #CreateSection .AddContent #ContentArea .ImageCredit {
+.Playground .AddContent .ContentArea .VideoCredit, .Playground .AddContent .ContentArea .ImageCredit {
   margin: 0.5rem auto;
 }
 
-#CreateSection .FinalisingBtns {
+.Playground .FinalisingBtns {
   margin: 1rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -271,7 +271,7 @@ img {
           justify-content: space-evenly;
 }
 
-#CreateSection .FinalisingBtns .FinalisingBtn {
+.Playground .FinalisingBtns .FinalisingBtn {
   -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
   padding: 0.5rem 1rem;
@@ -280,44 +280,44 @@ img {
           box-shadow: 0 0 1em #fff;
 }
 
-#CreateSection .FinalisingBtns .FinalisingBtn:hover {
+.Playground .FinalisingBtns .FinalisingBtn:hover {
   -webkit-box-shadow: 0 0 1em #606060;
           box-shadow: 0 0 1em #606060;
 }
 
-#CreateSection .FinalisingBtnHide {
+.Playground .FinalisingBtnHide {
   display: none;
 }
 
-#CreateSection .Final {
+.Playground .Final {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   border: 4px solid yellow;
 }
 
-#CreateSection .reset {
+.Playground .reset {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   border: 4px solid red;
 }
 
-#CreateSection .Post {
+.Playground .Post {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   border: 4px solid green;
 }
 
-#CreateSection .ResetArea {
+.Playground .ResetArea {
   margin: 1rem auto;
   max-width: 90%;
 }
 
-#CreateSection .ResetArea h1 {
+.Playground .ResetArea h1 {
   font-size: 1.5rem;
   color: blueviolet;
 }
 
-#CreateSection .ResetArea #ResetConfirmationBtnsArea {
+.Playground .ResetArea #ResetConfirmationBtnsArea {
   margin: 1rem auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -327,7 +327,7 @@ img {
           justify-content: space-evenly;
 }
 
-#CreateSection .ResetArea #ResetConfirmationBtnsArea button {
+.Playground .ResetArea #ResetConfirmationBtnsArea button {
   border-radius: 6px;
   -webkit-box-shadow: 0 0 1rem #909090;
           box-shadow: 0 0 1rem #909090;
@@ -336,12 +336,12 @@ img {
   font-size: 1.3rem;
 }
 
-#CreateSection .ResetArea #ResetConfirmationBtnsArea #ResetY {
+.Playground .ResetArea #ResetConfirmationBtnsArea #ResetY {
   color: red;
   border: 3px solid red;
 }
 
-#CreateSection .ResetArea #ResetConfirmationBtnsArea #ResetN {
+.Playground .ResetArea #ResetConfirmationBtnsArea #ResetN {
   color: blueviolet;
   border: 3px solid blueviolet;
 }

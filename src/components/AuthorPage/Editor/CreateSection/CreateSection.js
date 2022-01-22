@@ -15,7 +15,7 @@ import { VscClearAll } from 'react-icons/vsc';
 import { GrSend } from 'react-icons/gr';
 
 //CSS
-import './css/CreateSection.css';
+import '../css/CreateSection.css';
 
 //Import CreateNewContext
 import { CreateNewContext } from '../Editor';
@@ -45,7 +45,7 @@ function CreateSection(){
     }
 
     return(
-        <section id="CreateSection" className={createNew ? 'show':'hide'}>
+        <section className={createNew ? 'show Playground':'hide Playground'}>
             
             <div className="AddTitle">
                 <button className="TitleControlBtn" onClick={() => setTitleEdit(!titleEdit)}>{titleEdit?<MdDoneOutline size="1.2rem" />:<FiEdit2 size="1.2rem" />}</button>
@@ -58,7 +58,7 @@ function CreateSection(){
                 <p className="ContentLabel">Pen Down</p>
 
                 <CreateContext.Provider value={{ content, setContent, append, setAppend}}>
-                    <div id="ContentArea">
+                    <div className="ContentArea">
                         {
                             content.map((c, index) => {
                                 if(c){

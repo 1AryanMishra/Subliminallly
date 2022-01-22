@@ -28,6 +28,33 @@ img {
           flex-flow: column nowrap;
 }
 
+.Playground .UpdateCancelSection {
+  -webkit-box-shadow: 0 0 1rem #fff inset;
+          box-shadow: 0 0 1rem #fff inset;
+  padding: 0.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Playground .UpdateCancelSection .UpdateToggler {
+  color: #909;
+  -webkit-box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+          box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+}
+
+.Playground .UpdateCancelSection .UpdateLabel {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #909;
+}
+
 .Playground .AddTitle {
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;

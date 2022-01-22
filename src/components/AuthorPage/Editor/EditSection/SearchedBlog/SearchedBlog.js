@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { EditContext } from '../EditSection';
+import { EditContextMain } from '../EditSection';
 
 import { MdDeleteSweep } from 'react-icons/md';
 import { FiEdit } from 'react-icons/fi';
@@ -7,7 +7,7 @@ import { FiEdit } from 'react-icons/fi';
 
 function SearchedBlog(){
 
-    const { setEdit } = useContext(EditContext);
+    const { setEdit } = useContext(EditContextMain);
 
     return(
         <section id='SearchedBlog'>

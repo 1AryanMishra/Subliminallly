@@ -1,17 +1,18 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useContext } from 'react';
 import uuid from 'react-uuid';
 import Text from "./Text/Text";
 import Image from "./Image/Image";
 import Video from "./Video/Video";
 import Append from './Append/Append';
 
+//Edit Context from Up File
+import { EditContextMain } from '../EditSection';
+
 //Icons
 import { FiEdit2, FiYoutube } from 'react-icons/fi';
 import { MdDoneOutline } from 'react-icons/md';
 import { BsImage, BsCardText } from 'react-icons/bs';
 import { VscAdd } from 'react-icons/vsc';
-import { IoCheckmarkDoneSharp } from 'react-icons/io5';
-import { VscClearAll } from 'react-icons/vsc';
 import { GrSend } from 'react-icons/gr';
 
 //CSS
@@ -24,14 +25,13 @@ export const EditContext = createContext();
 
 function Edit(){
 
-    const [cancelEdit, setCancelEdit] = useState(false);
+    const { setEdit } = useContext(EditContextMain);
+
     const [content, setContent] = useState([]);
     const [titleEdit, setTitleEdit] = useState(true);
     const [mainTitle, setMainTitle] = useState('');
-    const [final, setFinal] = useState(false);
     const [post, setPost] = useState(false);
     const [append, setAppend] = useState(false);
-    const [reset, setReset] = useState(false);
 
     function addContent(ContentType){
         let newContent = {
@@ -43,11 +43,11 @@ function Edit(){
     }
 
     return(
-        <section className={ cancelEdit ? 'hide Playground':'show Playground'}>
+        <section className='Playground'>
             
-            <div className='UpdateCancelSection' onClick={() => setCancelEdit(!cancelEdit)}>
+            <div className='UpdateCancelSection' onClick={() => setEdit(false)}>
                 <p className='UpdateLabel'>Update</p>
-                <button className='CancelUpdate'>X</button>
+                <button className='UpdateToggler' onClick={() => setEdit(false)}>X</button>
             </div>
 
             <div className="AddTitle">
@@ -115,21 +115,8 @@ function Edit(){
             </div>
 
             <div className="FinalisingBtns">
-                <button className={reset?"reset FinalisingBtn":"FinalisingBtn"} onClick={() => setReset(!reset)}><VscClearAll size="2rem"/>Reset</button>
-                <button className={final?"Final FinalisingBtn":"FinalisingBtn"} onClick={() => setFinal(!final)}><IoCheckmarkDoneSharp size="2rem"/>Done</button>
-                <button className={final?`FinalisingBtn ${post?'Post':''}`:"FinalisingBtnHide"} onClick={() => setPost(!post)}><GrSend size="2rem"/>Post</button>
+                <button className='FinalisingBtn' onClick={() => setPost(!post)}><GrSend size="2rem"/>Update</button>
             </div>
-
-            {reset?<div className='ResetArea'>
-                <h1>Are you sure you wan't to Clear All? Once Cleared, CANNOT BE UNDONE!!!</h1>
-                <div id="ResetConfirmationBtnsArea">
-                    <button id='ResetY' onClick={() => {
-                        setContent([]);
-                        setReset(!reset);
-                    }}>Yes</button>
-                    <button id='ResetN' onClick={() => setReset(!reset)}>No</button>
-                </div>
-            </div>:null}
 
         </section>
     )

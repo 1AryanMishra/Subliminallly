@@ -57,7 +57,7 @@ function CreateSection(){
             
                 <p className="ContentLabel">Pen Down</p>
 
-                <CreateContext.Provider value={{ content, setContent, append, setAppend}}>
+                <CreateContext.Provider value={{ content, setContent, append, setAppend }}>
                     <div className="ContentArea">
                         {
                             content.map((c, index) => {

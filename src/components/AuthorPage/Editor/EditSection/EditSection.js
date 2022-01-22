@@ -3,7 +3,7 @@ import { useState, createContext } from 'react';
 import SearchedBlog from './SearchedBlog/SearchedBlog';
 import Edit from './Edit/Edit';
 
-export const EditContext = createContext();
+export const EditContextMain = createContext();
 
 
 function EditSection(){
@@ -14,9 +14,9 @@ function EditSection(){
     return(
         <section id='EditSection'>
 
-            <EditContext.Provider value={{setEdit}}>
+            <EditContextMain.Provider value={{ setEdit }}>
                 {edit?<Edit/>:<SearchedBlog/>}
-            </EditContext.Provider>
+            </EditContextMain.Provider>
         </section>
 
     )

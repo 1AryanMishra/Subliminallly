@@ -19,6 +19,25 @@ img{
     display: flex;
     flex-flow: column nowrap;
 
+    .UpdateCancelSection{
+        box-shadow: 0 0 1rem #fff inset;
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .UpdateToggler{
+            color: #909;
+            box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+        }
+
+        .UpdateLabel{
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #909;
+        }
+    }
+
     .AddTitle{
         box-shadow: 0 0 1em #fff;
         padding: 1em 0;

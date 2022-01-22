@@ -2,18 +2,47 @@
     min-height: 100vh;
     display: grid;
 
-    #SignOutSection{
-        margin-left: auto;
+    #SearchSection{
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
 
-        button{
-            margin: 1rem;
-            padding: 1rem;
+        #SearchBox{
+            display: flex;
+            overflow: hidden;
+            background: #fff;
+            border-radius: 36px;
+            max-width: 60%;
+            align-items: center;
+
+            #SearchText{
+                width: 90%;
+                padding: 0.5rem 1rem;
+                font-size: 1.1rem;
+                margin: 0;
+            }
+            #Search{
+                box-shadow: 0 0 1rem #909;
+                color: #909;
+                border-radius: 100%;
+                padding: 0.33rem;
+            }
+            #Search:hover{
+                transition: 0.2s ease;
+                transform: scale(1.1);
+            }
+        }
+
+        #SignOut{
+            padding: 0.5rem;
             color: #fff;
             background: #909090;
+            cursor: pointer;
             font-weight: bold;
             border: none;
             outline: none;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             box-shadow: 0 0 0.5rem #fff inset, 0 0 1rem #909090;
             border-radius: 6px;
         }
@@ -58,32 +87,56 @@
         display: flex;
         flex-flow: column nowrap;
 
-        .ActivityPane{
-            margin-top: auto;
+        #SearchedBlog{
+            margin: 1rem auto;
+            width: 90%;
+            box-shadow: 0 0 1rem #fff;
+            padding: 1rem 0;
             display: flex;
-            justify-content: space-around;
-            
-            .Activity{
-                transition: 0.5s ease;
-                margin: auto;
-                padding: 1em;
-                background: rgba(200, 200, 220, 0.6);
-                font-weight: bold;
-                font-size: 1.1rem;
-                color: #505050;
-                box-shadow: 0 0 1em #fff;
+            justify-content: space-evenly;
+            align-items: center;
+
+            #SearchedBlogTitle{
+                margin-left: 1rem;
+                font-size: 1.4rem;
+                max-width: 60%;
             }
 
-            .Activity:hover, .Activity:focus{
-                transform: scale(1.2);
-                box-shadow: 0 0 1em #fff inset, 0 0 1em #fff;
+            #SearchedBlogAction{
+                width: 40%;
+                display: flex;
+                justify-content: space-evenly;
+
+                .SearchedBlogActionBtn{
+                    margin: 0 0.5rem;
+                    box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
+                    color: #909;
+                }
             }
         }
 
-        .Playground{
-            margin: auto 0;
+        #CreateNewSection{
             display: flex;
-            flex-flow: column nowrap;
-        }   
+            flex-direction: column;
+
+            #CreateBtnArea{
+                box-shadow: 0 0 1rem #fff inset;
+                padding: 0.5rem 0;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+
+                .CreateToggler{
+                    color: #909;
+                    box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+                }
+
+                #CreateLabel{
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    color: #909;
+                }
+            }
+        }
     }
 }

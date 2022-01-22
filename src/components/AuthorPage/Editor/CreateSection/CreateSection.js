@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useContext } from 'react';
 import uuid from 'react-uuid';
 import Text from "./Text/Text";
 import Image from "./Image/Image";
@@ -17,11 +17,15 @@ import { GrSend } from 'react-icons/gr';
 //CSS
 import './css/CreateSection.css';
 
+//Import CreateNewContext
+import { CreateNewContext } from '../Editor';
 
 export const CreateContext = createContext();
 
 
 function CreateSection(){
+
+    const { createNew } = useContext(CreateNewContext);
 
     const [content, setContent] = useState([]);
     const [titleEdit, setTitleEdit] = useState(true);
@@ -41,7 +45,7 @@ function CreateSection(){
     }
 
     return(
-        <section id="CreateSection">
+        <section id="CreateSection" className={createNew ? 'show':'hide'}>
             
             <div className="AddTitle">
                 <button className="TitleControlBtn" onClick={() => setTitleEdit(!titleEdit)}>{titleEdit?<MdDoneOutline size="1.2rem" />:<FiEdit2 size="1.2rem" />}</button>

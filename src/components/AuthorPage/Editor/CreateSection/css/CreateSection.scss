@@ -6,7 +6,16 @@ img{
     max-width: 100%;
 }
 
+.hide{
+    height: 0;
+}
+.show{
+    height: 100%;
+}
+
 #CreateSection{
+    transition: 0.5s ease;
+    overflow: hidden;
     display: flex;
     flex-flow: column nowrap;
 

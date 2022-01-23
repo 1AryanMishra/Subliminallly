@@ -7,15 +7,8 @@ img {
   max-width: 100%;
 }
 
-.hide {
-  height: 0;
-}
-
-.show {
-  height: 100%;
-}
-
 .Playground {
+  height: 100%;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   overflow: hidden;
@@ -44,6 +37,7 @@ img {
 }
 
 .Playground .UpdateCancelSection .UpdateToggler {
+  border-radius: 100%;
   color: #909;
   -webkit-box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
           box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
@@ -371,6 +365,10 @@ img {
 .Playground .ResetArea #ResetConfirmationBtnsArea #ResetN {
   color: blueviolet;
   border: 3px solid blueviolet;
+}
+
+.hide {
+  height: 0;
 }
 
 @media (min-width: 950px) {

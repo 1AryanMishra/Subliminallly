@@ -14,6 +14,7 @@ import { MdDoneOutline } from 'react-icons/md';
 import { BsImage, BsCardText } from 'react-icons/bs';
 import { VscAdd } from 'react-icons/vsc';
 import { GrSend } from 'react-icons/gr';
+import { TiCancelOutline } from 'react-icons/ti';
 
 //CSS
 import '../../css/CreateSection.css';
@@ -47,7 +48,7 @@ function Edit(){
             
             <div className='UpdateCancelSection' onClick={() => setEdit(false)}>
                 <p className='UpdateLabel'>Update</p>
-                <button className='UpdateToggler' onClick={() => setEdit(false)}>X</button>
+                <TiCancelOutline size="2rem" className='UpdateToggler' onClick={() => setEdit(false)}/>
             </div>
 
             <div className="AddTitle">

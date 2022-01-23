@@ -27,7 +27,7 @@ function Editor(){
                 <section id='SearchSection'>
                     <div id='SearchBox'>
                         <input type="text" id='SearchText' placeholder='Search with keywords'/>
-                        <FaSearch id='Search' size="1.8rem" onClick={() => setSearched(!searched)}/>
+                        <FaSearch id='Search' size="2rem" onClick={() => setSearched(!searched)}/>
                     </div>
                     <button onClick={() => setSignedIn(false)} id='SignOut'>SignOut</button>
                 </section>

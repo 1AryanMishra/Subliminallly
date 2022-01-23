@@ -31,7 +31,7 @@
 }
 
 .AuthorPage #SearchSection #SearchBox #SearchText {
-  width: 90%;
+  width: 86%;
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
   margin: 0;
@@ -42,7 +42,7 @@
           box-shadow: 0 0 1rem #909;
   color: #909;
   border-radius: 100%;
-  padding: 0.33rem;
+  padding: 0.3rem;
 }
 
 .AuthorPage #SearchSection #SearchBox #Search:hover {
@@ -120,7 +120,17 @@
           flex-flow: column nowrap;
 }
 
-.AuthorPage .EditorSection #SearchedBlog {
+.AuthorPage .EditorSection .SearchedBlogControl .HideSearchedBlog {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  overflow: hidden;
+  height: 0;
+  width: 0;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .SearchedBlog {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
   margin: 1rem auto;
   width: 90%;
   -webkit-box-shadow: 0 0 1rem #fff;
@@ -137,13 +147,13 @@
           align-items: center;
 }
 
-.AuthorPage .EditorSection #SearchedBlog #SearchedBlogTitle {
+.AuthorPage .EditorSection .SearchedBlogControl .SearchedBlog #SearchedBlogTitle {
   margin-left: 1rem;
   font-size: 1.4rem;
   max-width: 60%;
 }
 
-.AuthorPage .EditorSection #SearchedBlog #SearchedBlogAction {
+.AuthorPage .EditorSection .SearchedBlogControl .SearchedBlog #SearchedBlogAction {
   width: 40%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -153,11 +163,121 @@
           justify-content: space-evenly;
 }
 
-.AuthorPage .EditorSection #SearchedBlog #SearchedBlogAction .SearchedBlogActionBtn {
+.AuthorPage .EditorSection .SearchedBlogControl .SearchedBlog #SearchedBlogAction .SearchedBlogActionBtn {
   margin: 0 0.5rem;
   -webkit-box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
           box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
   color: #909;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Hide {
+  display: none;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  right: 15%;
+  bottom: 25%;
+  background: #909090;
+  -webkit-box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+          box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+  border-top-right-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .closeAlert {
+  margin: 4px;
+  margin-left: auto;
+  border-radius: 100%;
+  -webkit-box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
+          box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
+  color: #909;
+  padding: 0.3rem;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning #alertIcon {
+  margin: auto;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningText {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #909;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningConfirmBtns {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningConfirmBtns button {
+  padding: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningConfirmBtns .Yes {
+  background: red;
+  color: lightblue;
+  -webkit-box-shadow: 0 0 0.5rem lightblue;
+          box-shadow: 0 0 0.5rem lightblue;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningConfirmBtns .No {
+  background: lightblue;
+  color: red;
+  -webkit-box-shadow: 0 0 0.5rem lightblue;
+          box-shadow: 0 0 0.5rem lightblue;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .workDone {
+  margin: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.AuthorPage .EditorSection .SearchedBlogControl .Alert .workDone .workDoneLabel {
+  font-size: 2rem;
+  color: greenyellow;
+  font-weight: bold;
 }
 
 .AuthorPage .EditorSection #CreateNewSection {
@@ -177,6 +297,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;

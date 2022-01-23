@@ -45,7 +45,7 @@ function CreateSection(){
     }
 
     return(
-        <section className={createNew ? 'show Playground':'hide Playground'}>
+        <section className={createNew ? 'Playground':'Playground hide'}>
             
             <div className="AddTitle">
                 <button className="TitleControlBtn" onClick={() => setTitleEdit(!titleEdit)}>{titleEdit?<MdDoneOutline size="1.2rem" />:<FiEdit2 size="1.2rem" />}</button>

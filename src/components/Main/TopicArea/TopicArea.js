@@ -13,7 +13,7 @@ function TopicArea(){
 
             <TopicContent/>
 
-            <Interact/>
+            <Interact likes={245} dislikes={13}/>
 
         </article>
     )

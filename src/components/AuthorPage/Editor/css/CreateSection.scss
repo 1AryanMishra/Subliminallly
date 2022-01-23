@@ -6,14 +6,9 @@ img{
     max-width: 100%;
 }
 
-.hide{
-    height: 0;
-}
-.show{
-    height: 100%;
-}
 
 .Playground{
+    height: 100%;
     transition: 0.5s ease;
     overflow: hidden;
     display: flex;
@@ -27,6 +22,7 @@ img{
         align-items: center;
 
         .UpdateToggler{
+            border-radius: 100%;
             color: #909;
             box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
         }
@@ -280,6 +276,10 @@ img{
             }
         }
     }
+}
+
+.hide{
+    height: 0;
 }
 
 @media (min-width : 950px){

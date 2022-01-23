@@ -8,12 +8,12 @@ import { FcLike, FcLikePlaceholder, FcDislike } from 'react-icons/fc';
 import { BsShare } from 'react-icons/bs';
 import { RiDislikeLine } from 'react-icons/ri';
 
-function Interact(){
+function Interact(props){
 
-    const [likes, setLikes] = useState(269);
-    const [liked, setLiked] = useState(false);
-    const [dislikes, setDislikes] = useState(10);
-    const [disliked, setDisliked] = useState(false);
+    const [postLikes, setPostLikes] = useState(props.likes);
+    const [postLiked, setPostLiked] = useState(false);
+    const [postDislikes, setPostDislikes] = useState(props.dislikes);
+    const [postDisliked, setPostDisliked] = useState(false);
 
     async function ShareTopic(){
         try{
@@ -31,36 +31,36 @@ function Interact(){
     return(
         <div className="Interact">
             <button className="Like" onClick={() => {
-                if(liked){
-                    setLikes(likes-1);
+                if(postLiked){
+                    setPostLikes(postLikes-1);
                 }
                 else{
-                    setLikes(likes+1);
-                    if(disliked){
-                        setDisliked(!disliked);
-                        setDislikes(dislikes-1);
+                    setPostLikes(postLikes+1);
+                    if(postDisliked){
+                        setPostDisliked(!postDisliked);
+                        setPostDislikes(postDislikes-1);
                     }
                 }
-                setLiked(!liked);
+                setPostLiked(!postLiked);
             }}>
-                {liked?<FcLike size='2rem'/>:<FcLikePlaceholder size='2rem'/>}
-                {likes}
+                {postLiked?<FcLike size='2rem'/>:<FcLikePlaceholder size='2rem'/>}
+                {postLikes}
             </button>
             <button className="Dislike" onClick={() => {
-                if(disliked){
-                    setDislikes(dislikes-1);
+                if(postDisliked){
+                    setPostDislikes(postDislikes-1);
                 }
                 else{
-                    if(liked){
-                        setLiked(!liked);
-                        setLikes(likes-1);
+                    if(postLiked){
+                        setPostLiked(!postLiked);
+                        setPostLikes(postLikes-1);
                     }
-                    setDislikes(dislikes+1);
+                    setPostDislikes(postDislikes+1);
                 }
-                setDisliked(!disliked);
+                setPostDisliked(!postDisliked);
             }}>
-                {disliked?<FcDislike size='2rem'/>:<RiDislikeLine size='2rem'/>}
-                {dislikes}
+                {postDisliked?<FcDislike size='2rem'/>:<RiDislikeLine size='2rem'/>}
+                {postDislikes}
             </button>
             <button className="Share" onClick={ShareTopic}>
                 <BsShare size='2rem'/>

@@ -17,7 +17,7 @@
             align-items: center;
 
             #SearchText{
-                width: 90%;
+                width: 86%;
                 padding: 0.5rem 1rem;
                 font-size: 1.1rem;
                 margin: 0;
@@ -26,7 +26,7 @@
                 box-shadow: 0 0 1rem #909;
                 color: #909;
                 border-radius: 100%;
-                padding: 0.33rem;
+                padding: 0.3rem;
             }
             #Search:hover{
                 transition: 0.2s ease;
@@ -87,33 +87,129 @@
         display: flex;
         flex-flow: column nowrap;
 
-        #SearchedBlog{
-            margin: 1rem auto;
-            width: 90%;
-            box-shadow: 0 0 1rem #fff;
-            padding: 1rem 0;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
+        .SearchedBlogControl{
 
-            #SearchedBlogTitle{
-                margin-left: 1rem;
-                font-size: 1.4rem;
-                max-width: 60%;
+            .HideSearchedBlog{
+                transition: 0.5s ease;
+                overflow: hidden;
+                height: 0;
+                width: 0;
             }
-
-            #SearchedBlogAction{
-                width: 40%;
+    
+            .SearchedBlog{
+                transition: 0.5s ease;
+                margin: 1rem auto;
+                width: 90%;
+                box-shadow: 0 0 1rem #fff;
+                padding: 1rem 0;
                 display: flex;
                 justify-content: space-evenly;
+                align-items: center;
+    
+                #SearchedBlogTitle{
+                    margin-left: 1rem;
+                    font-size: 1.4rem;
+                    max-width: 60%;
+                }
+    
+                #SearchedBlogAction{
+                    width: 40%;
+                    display: flex;
+                    justify-content: space-evenly;
+    
+                    .SearchedBlogActionBtn{
+                        margin: 0 0.5rem;
+                        box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
+                        color: #909;
+                    }
+                }
+            }
 
-                .SearchedBlogActionBtn{
-                    margin: 0 0.5rem;
+            .Hide{
+                display: none;
+            }
+
+            .Alert{
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 25%;
+                left: 15%;
+                right: 15%;
+                bottom: 25%;
+                background: #909090;
+                box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+                border-top-right-radius: 24px;
+                border-bottom-left-radius: 24px;
+
+                .closeAlert{
+                    margin: 4px;
+                    margin-left: auto;
+                    border-radius: 100%;
                     box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
                     color: #909;
+                    padding: 0.3rem;
+                }
+
+                .warning{
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0 0.5rem;
+
+                    #alertIcon{
+                        margin: auto;
+                    }
+
+                    .warningText{
+                        text-align: center;
+                        font-size: 1.7rem;
+                        font-weight: bold;
+                        color: #909;
+                    }
+
+                    .warningConfirmBtns{
+                        margin: 1rem 0;
+                        display: flex;
+                        justify-content: space-evenly;
+
+                        button{
+                            padding: 1rem;
+                            font-size: 1.4rem;
+                            font-weight: bold;
+                            border-radius: 6px;
+                            cursor: pointer;
+                        }
+
+                        .Yes{
+                            background: red;
+                            color: lightblue;
+                            box-shadow: 0 0 0.5rem lightblue;
+                        }
+                        .No{
+                            background: lightblue;
+                            color: red;
+                            box-shadow: 0 0 0.5rem lightblue;
+                        }
+                    }
+                }
+                
+                .workDone{
+                    margin: auto;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    .workDoneLabel{
+                        font-size: 2rem;
+                        color: greenyellow;
+                        font-weight: bold;
+                    }
                 }
             }
         }
+
 
         #CreateNewSection{
             display: flex;
@@ -123,6 +219,7 @@
                 box-shadow: 0 0 1rem #fff inset;
                 padding: 0.5rem 0;
                 display: flex;
+                cursor: pointer;
                 justify-content: space-evenly;
                 align-items: center;
 

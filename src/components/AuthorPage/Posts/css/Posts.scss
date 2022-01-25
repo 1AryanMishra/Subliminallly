@@ -12,6 +12,13 @@
         box-shadow: 0 0 1rem #fff;
     }
 
+    .Hide{
+        transition: 0.5s;
+        height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+
     .Post{
         margin: 1rem auto;
         width: 95%;
@@ -43,9 +50,10 @@
                 justify-content: space-between;
 
                 .moreActionItem{
-                    box-shadow: 0 0 1rem #fff, 0 0 1rem #fff;
+                    cursor: pointer;
                     border-radius: 100%;
-                    padding: 0.5rem;
+                    padding: 0.5rem 0.6rem;
+                    background: #909090;
                     font-weight: bold;
                     font-size: 1rem;
                     color: #fff;
@@ -97,5 +105,13 @@
             font-size: 1.1rem;
             margin-left: auto;
         }
+    }
+
+    .postDivider{
+        margin: 1rem auto;
+        height: 2px;
+        box-shadow: 0 0 1rem #fff;
+        background: #909;
+        width: 80%;
     }
 }

@@ -1,0 +1,92 @@
+.Alert{
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(#000, 0.6);
+
+    .InsideAlert{
+        width: 80%;
+        height: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        background: #909090;
+        box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+        border-top-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+    
+        .Hide{
+            display: none;
+        }
+    
+        .closeAlert{
+            margin: 4px;
+            padding: 0.1rem;
+            box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
+            margin-left: auto;
+            border-radius: 100%;
+            color: #909;
+            cursor: pointer;
+        }
+    
+        .warning{
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            padding: 0 0.5rem;
+    
+            #alertIcon{
+                margin: auto;
+            }
+    
+            .warningText{
+                text-align: center;
+                font-size: 1.7rem;
+                font-weight: bold;
+                color: #909;
+            }
+    
+            .warningConfirmBtns{
+                margin: 1rem 0;
+                display: flex;
+                justify-content: space-evenly;
+    
+                button{
+                    padding: 1rem;
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+    
+                .Yes{
+                    background: red;
+                    color: lightblue;
+                    box-shadow: 0 0 0.5rem lightblue;
+                }
+                .No{
+                    background: lightblue;
+                    color: red;
+                    box-shadow: 0 0 0.5rem lightblue;
+                }
+            }
+        }
+        
+        .workDone{
+            margin: auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+            .workDoneLabel{
+                font-size: 2rem;
+                color: greenyellow;
+                font-weight: bold;
+            }
+        }
+    }
+}

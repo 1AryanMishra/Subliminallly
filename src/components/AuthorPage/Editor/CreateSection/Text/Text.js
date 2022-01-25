@@ -26,16 +26,7 @@ function Text({ContentID}){
 
     
     if(removePara && para === ''){
-        let newArr = [];
-        for(let i = 0; i<content.length; i++){
-            if(i === ContentID){
-                continue;
-            }
-            else{
-                newArr.push(content[i]);
-            }
-        }
-        setContent(newArr);
+        setContent(content.filter(n => content.indexOf(n) !== ContentID));
         return null;
     }
     else if(removePara){

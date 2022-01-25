@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { EditContext } from '../Edit';
+import { EditSectionContext } from '../Edit';
 import uuid from 'react-uuid';
  
 //Icons
@@ -9,7 +9,7 @@ import { AiOutlineClose } from 'react-icons/ai';
 
 function MiniContentPane({position, addContentFn}){
 
-    const {content, setContent, setAppend} = useContext(EditContext);
+    const {content, setContent, setAppend} = useContext(EditSectionContext);
 
     function appendContent(type){
         let NewContent = {
@@ -17,14 +17,7 @@ function MiniContentPane({position, addContentFn}){
             type : type,
             content : '',
         }
-        let newArr = [];
-        for(let i = 0; i<content.length; i++){
-            if(i === position){
-                newArr.push(NewContent);
-            }
-            newArr.push(content[i]);
-        }
-        setContent(newArr);
+        setContent([...content.slice(0, position), NewContent, ...content.slice(position)]);
         addContentFn(false);
         setAppend(false);
         return null;

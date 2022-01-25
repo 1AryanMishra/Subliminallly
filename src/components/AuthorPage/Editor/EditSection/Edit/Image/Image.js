@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 
-import { EditContext } from '../Edit';
+import { EditSectionContext } from '../Edit';
 
 
 
@@ -14,7 +14,7 @@ import { IoArrowUndoOutline } from 'react-icons/io5';
 
 
 function Image({ContentID}){
-    const {content, setContent} = useContext(EditContext);
+    const {content, setContent} = useContext(EditSectionContext);
     const [imageSrc, setImageSrc] = useState(content[ContentID].content.imageSrc || '')
     const [changeImageSrc, setChangeImageSrc] = useState(() => {
         if(imageSrc === ''){
@@ -34,16 +34,7 @@ function Image({ContentID}){
 
 
     if(removeImageSrc && imageSrc === ''){
-        let newArr = [];
-        for(let i = 0; i<content.length; i++){
-            if(i === ContentID){
-                continue;
-            }
-            else{
-                newArr.push(content[i]);
-            }
-        }
-        setContent(newArr);
+        setContent(content.filter(n => content.indexOf(n) !== ContentID));
         return null;
     }
     else if(removeImageSrc){

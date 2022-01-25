@@ -29,9 +29,9 @@
 
 #Posts .Post {
   margin: 1rem auto;
-  width: 95%;
-  -webkit-box-shadow: 0 0 1rem #fff;
-          box-shadow: 0 0 1rem #fff;
+  width: 90%;
+  -webkit-box-shadow: 0 0 1rem #fff inset, 0 0 0.5rem blue;
+          box-shadow: 0 0 1rem #fff inset, 0 0 0.5rem blue;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -121,7 +121,7 @@
 }
 
 #Posts .Post .blogSnip .blogHeading {
-  font-size: 1.4rem;
+  font-size: 1.7rem;
   color: #909;
 }
 

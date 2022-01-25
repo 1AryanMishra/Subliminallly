@@ -1,13 +1,13 @@
 import { useContext, useState } from 'react';
 import { VscAdd } from 'react-icons/vsc';
-import {EditContext} from '../Edit';
+import {EditSectionContext} from '../Edit';
 import uuid from 'react-uuid';
 
 import MiniContentPane from './MiniContentPane';
 
 function Append({ContentID}){
 
-    const { append } = useContext(EditContext);
+    const { append } = useContext(EditSectionContext);
 
     const [isAddContent, setIsAddContent] = useState(append);
     const [ContentType, setContentType] = useState(false);

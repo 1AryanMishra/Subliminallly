@@ -17,14 +17,7 @@ function MiniContentPane({position, addContentFn}){
             type : type,
             content : '',
         }
-        let newArr = [];
-        for(let i = 0; i<content.length; i++){
-            if(i === position){
-                newArr.push(NewContent);
-            }
-            newArr.push(content[i]);
-        }
-        setContent(newArr);
+        setContent([...content.slice(0, position), NewContent, ...content.slice(position)]);
         addContentFn(false);
         setAppend(false);
         return null;

@@ -1,7 +1,12 @@
 .AuthorPage {
   min-height: 100vh;
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.AuthorPage .justPlaceholder {
+  display: none;
 }
 
 .AuthorPage #SearchSection {
@@ -114,6 +119,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -164,120 +172,11 @@
 }
 
 .AuthorPage .EditorSection .SearchedBlogControl .SearchedBlog #SearchedBlogAction .SearchedBlogActionBtn {
+  cursor: pointer;
   margin: 0 0.5rem;
   -webkit-box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
           box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
   color: #909;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Hide {
-  display: none;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: absolute;
-  top: 25%;
-  left: 15%;
-  right: 15%;
-  bottom: 25%;
-  background: #909090;
-  -webkit-box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
-          box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
-  border-top-right-radius: 24px;
-  border-bottom-left-radius: 24px;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .closeAlert {
-  margin: 4px;
-  margin-left: auto;
-  border-radius: 100%;
-  -webkit-box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
-          box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
-  color: #909;
-  padding: 0.3rem;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning {
-  margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 0 0.5rem;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning #alertIcon {
-  margin: auto;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningText {
-  text-align: center;
-  font-size: 1.7rem;
-  font-weight: bold;
-  color: #909;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningConfirmBtns {
-  margin: 1rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningConfirmBtns button {
-  padding: 1rem;
-  font-size: 1.4rem;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningConfirmBtns .Yes {
-  background: red;
-  color: lightblue;
-  -webkit-box-shadow: 0 0 0.5rem lightblue;
-          box-shadow: 0 0 0.5rem lightblue;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .warning .warningConfirmBtns .No {
-  background: lightblue;
-  color: red;
-  -webkit-box-shadow: 0 0 0.5rem lightblue;
-          box-shadow: 0 0 0.5rem lightblue;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .workDone {
-  margin: auto;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.AuthorPage .EditorSection .SearchedBlogControl .Alert .workDone .workDoneLabel {
-  font-size: 2rem;
-  color: greenyellow;
-  font-weight: bold;
 }
 
 .AuthorPage .EditorSection #CreateNewSection {
@@ -316,5 +215,54 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: #909;
+}
+
+@media (min-width: 950px) {
+  .AuthorPage .justPlaceholder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-shadow: 0 0 1rem #fff inset;
+            box-shadow: 0 0 1rem #fff inset;
+    background: lightblue;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .AuthorPage .justPlaceholder .justPlaceholderNavArea {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: #909090;
+  }
+  .AuthorPage .justPlaceholder .justPlaceholderNavArea p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: lightblue;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  .AuthorPage .justPlaceholder .justPlaceholderNavArea p:hover {
+    color: #909090;
+    background: lightblue;
+    border-top-right-radius: 36px;
+    border-bottom-right-radius: 36px;
+  }
 }
 /*# sourceMappingURL=AuthorPage.css.map */

@@ -1,6 +1,10 @@
 .AuthorPage{
     min-height: 100vh;
-    display: grid;
+    display: flex;
+
+    .justPlaceholder{
+        display: none;
+    }
 
     #SearchSection{
         margin-bottom: 1rem;
@@ -85,6 +89,7 @@
     .EditorSection{
         margin: 1em 0;
         display: flex;
+        flex: 3;
         flex-flow: column nowrap;
 
         .SearchedBlogControl{
@@ -118,93 +123,10 @@
                     justify-content: space-evenly;
     
                     .SearchedBlogActionBtn{
+                        cursor: pointer;
                         margin: 0 0.5rem;
                         box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
                         color: #909;
-                    }
-                }
-            }
-
-            .Hide{
-                display: none;
-            }
-
-            .Alert{
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 25%;
-                left: 15%;
-                right: 15%;
-                bottom: 25%;
-                background: #909090;
-                box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
-                border-top-right-radius: 24px;
-                border-bottom-left-radius: 24px;
-
-                .closeAlert{
-                    margin: 4px;
-                    margin-left: auto;
-                    border-radius: 100%;
-                    box-shadow: 0 0 1rem #fff, 0 0 1rem #fff inset;
-                    color: #909;
-                    padding: 0.3rem;
-                }
-
-                .warning{
-                    margin: auto;
-                    display: flex;
-                    flex-direction: column;
-                    padding: 0 0.5rem;
-
-                    #alertIcon{
-                        margin: auto;
-                    }
-
-                    .warningText{
-                        text-align: center;
-                        font-size: 1.7rem;
-                        font-weight: bold;
-                        color: #909;
-                    }
-
-                    .warningConfirmBtns{
-                        margin: 1rem 0;
-                        display: flex;
-                        justify-content: space-evenly;
-
-                        button{
-                            padding: 1rem;
-                            font-size: 1.4rem;
-                            font-weight: bold;
-                            border-radius: 6px;
-                            cursor: pointer;
-                        }
-
-                        .Yes{
-                            background: red;
-                            color: lightblue;
-                            box-shadow: 0 0 0.5rem lightblue;
-                        }
-                        .No{
-                            background: lightblue;
-                            color: red;
-                            box-shadow: 0 0 0.5rem lightblue;
-                        }
-                    }
-                }
-                
-                .workDone{
-                    margin: auto;
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-
-                    .workDoneLabel{
-                        font-size: 2rem;
-                        color: greenyellow;
-                        font-weight: bold;
                     }
                 }
             }
@@ -232,6 +154,44 @@
                     font-size: 1.5rem;
                     font-weight: bold;
                     color: #909;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width : 950px){
+    .AuthorPage{
+
+        .justPlaceholder{
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            box-shadow: 0 0 1rem #fff inset;
+            background: lightblue;
+            justify-content: space-between;
+            
+            .justPlaceholderNavArea{
+                display: flex;
+                position: sticky;
+                top: 0;
+                flex-direction: column;
+                background: #909090;
+
+                p{
+                    font-size: 1.4rem;
+                    font-weight: bold;
+                    color: lightblue;
+                    transition: 0.5s ease;
+                    padding: 1rem;
+                    cursor: pointer;
+                }
+                p:hover{
+                    color: #909090;
+                    background: lightblue;
+                    border-top-right-radius: 36px;
+                    border-bottom-right-radius: 36px;
                 }
             }
         }

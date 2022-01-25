@@ -6,7 +6,7 @@ import Video from "./Video/Video";
 import Append from './Append/Append';
 
 //Edit Context from Up File
-import { EditContextMain } from '../EditSection';
+import { EditContext } from '../../Editor';
 
 //Icons
 import { FiEdit2, FiYoutube } from 'react-icons/fi';
@@ -21,14 +21,14 @@ import '../../css/CreateSection.css';
 
 //Import CreateNewContext
 
-export const EditContext = createContext();
+export const EditSectionContext = createContext();
 
 
-function Edit(){
+function Edit(props){
 
-    const { setEdit } = useContext(EditContextMain);
+    const { setEdit } = useContext(EditContext);
 
-    const [content, setContent] = useState([]);
+    const [content, setContent] = useState(props.content || []);
     const [titleEdit, setTitleEdit] = useState(true);
     const [mainTitle, setMainTitle] = useState('');
     const [post, setPost] = useState(false);
@@ -61,7 +61,7 @@ function Edit(){
             
                 <p className="ContentLabel">Pen Down</p>
 
-                <EditContext.Provider value={{ content, setContent, append, setAppend}}>
+                <EditSectionContext.Provider value={{ content, setContent, append, setAppend}}>
                     <div className="ContentArea">
                         {
                             content.map((c, index) => {
@@ -104,7 +104,7 @@ function Edit(){
                             })
                         }
                     </div>
-                </EditContext.Provider>
+                </EditSectionContext.Provider>
 
                 <div className="ContentTypeBtnsArea">
                     <button className="ContentBtn" onClick={() => addContent('p')}><BsCardText size="2rem" /></button>

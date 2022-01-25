@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 
-import { EditContext } from "../Edit";
+import { EditSectionContext } from "../Edit";
 
 
 //Icons
@@ -14,7 +14,7 @@ import { IoArrowUndoOutline } from 'react-icons/io5';
 
 function Video({contents, setContentFn, ContentID}){
     
-    const {content, setContent} = useContext(EditContext);
+    const {content, setContent} = useContext(EditSectionContext);
     const [video, setVideo] = useState(content[ContentID].content.video || '');
     const [changeVideo, setChangeVideo] = useState(() => {
         if(video === ''){
@@ -54,16 +54,7 @@ function Video({contents, setContentFn, ContentID}){
 
 
     if(removeVideo && video === ''){
-        let newArr = [];
-        for(let i = 0; i<content.length; i++){
-            if(i === ContentID){
-                continue;
-            }
-            else{
-                newArr.push(content[i]);
-            }
-        }
-        setContent(newArr);
+        setContent(content.filter(n => content.indexOf(n) !== ContentID));
         return null;
     }
     else if(removeVideo){

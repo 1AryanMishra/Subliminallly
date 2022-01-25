@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 
-import { EditContext } from '../Edit';
+import { EditSectionContext } from '../Edit';
 
 
 //Icons
@@ -13,7 +13,7 @@ import { IoArrowUndoOutline } from 'react-icons/io5';
 
 
 function Text({ContentID}){
-    const {content, setContent} = useContext(EditContext);
+    const {content, setContent} = useContext(EditSectionContext);
     const [para, setPara] = useState(content[ContentID].content || "");
     const [changePara, setChangePara] = useState(() => {
         if(para === ''){
@@ -27,16 +27,7 @@ function Text({ContentID}){
 
     
     if(removePara && para === ''){
-        let newArr = [];
-        for(let i = 0; i<content.length; i++){
-            if(i === ContentID){
-                continue;
-            }
-            else{
-                newArr.push(content[i]);
-            }
-        }
-        setContent(newArr);
+        setContent(content.filter(n => content.indexOf(n) !== ContentID));
         return null;
     }
     else if(removePara){

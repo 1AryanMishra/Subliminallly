@@ -18,6 +18,7 @@ import { VscClearAll } from 'react-icons/vsc';
 import { GrSend } from 'react-icons/gr';
 import { FcApproval } from 'react-icons/fc';
 import { MdError } from 'react-icons/md';
+import { GiEmptyWoodBucketHandle } from 'react-icons/gi';
 
 //CSS
 import '../css/CreateSection.css';
@@ -41,6 +42,7 @@ function CreateSection(){
     const [append, setAppend] = useState(false);
     const [reset, setReset] = useState(false);
     const [retry, setRetry] = useState(false);
+    const [emptyBlog, setEmptyBlog] = useState(false);
 
     function addContent(ContentType){
         let newContent = {
@@ -54,6 +56,10 @@ function CreateSection(){
 
     //Posting to the Server
     function PostToServer(){
+        if(content.length === 0){
+            setEmptyBlog(true);
+            return;
+        }
         setRetry(false);
         setPost(true);
         axios.post('http://localhost:5000/AuthorPage', {
@@ -77,10 +83,10 @@ function CreateSection(){
 
             <div className='BlogContent'>
 
-                <div className={posted?"PostedBanner":"PostedBannerHide"}>
+                {posted ? <div className="PostedBanner">
                     <FcApproval id='PostedIcon' size="7rem" color='green'/>
                     <h1>Posted</h1>
-                </div>
+                </div> : null}
 
                 <div className="AddTitle">
                     <button className="TitleControlBtn" onClick={() => setTitleEdit(!titleEdit)}>{titleEdit?<MdDoneOutline size="1.2rem" />:<FiEdit2 size="1.2rem" />}</button>
@@ -147,10 +153,32 @@ function CreateSection(){
                 </div>
             </div>
 
-            {retry?<div className='retryContainer'>
-                <MdError/>
-                <p>Some error Occurred!, Please Retry.</p>
-            </div> : null}
+            <section className='ContentControlMsgArea'>
+                {retry ? <div id='RetryMsgArea' className='MsgArea'>
+                    <MdError size='5rem' className='MsgIcon'/>
+                    <p className='msg'>Some error Occurred!, Please Retry.</p>
+                </div> : null}
+
+                {emptyBlog?<div className="MsgArea">
+                    <GiEmptyWoodBucketHandle size="5rem" id='EmptyBlog' className='MsgIcon'/>
+                    <p className='msg'>Can't Post Empty Blog. Please Write Something!</p>
+                </div> : null}
+
+                {reset?<div className='ResetArea'>
+                    <h1>Are you sure you wan't to Clear All? Once Cleared, CANNOT BE UNDONE!!!</h1>
+                    <div id="ResetConfirmationBtnsArea">
+                        <button id='ResetY' onClick={() => {
+                            setContent([]);
+                            setReset(!reset);
+                            setRetry(false);
+                            setEmptyBlog(false);
+                            setFinal(false);
+                        }}>Yes</button>
+                        <button id='ResetN' onClick={() => setReset(!reset)}>No</button>
+                    </div>
+                </div>:null}
+                
+            </section>
             
 
             <div className="FinalisingBtns">
@@ -159,20 +187,10 @@ function CreateSection(){
                     setFinal(!final);
                     setPost(false);
                     setPosted(false);
+                    setRetry(false);
                     }}><IoCheckmarkDoneSharp size="2rem"/>Done</button>
-                <button className={final?`FinalisingBtn ${post?'Post':''}`:"FinalisingBtnHide"} onClick={() => PostToServer()}><GrSend size="2rem"/>{post?(posted?"Posted":"Posting"):"Post"}</button>
+                <button className={final?`FinalisingBtn ${post?'Post':''}`:"FinalisingBtnHide"} onClick={() => PostToServer()}><GrSend size="2rem"/>{retry ? "Retry" : post?(posted?"Posted":"Posting"):"Post"}</button>
             </div>
-
-            {reset?<div className='ResetArea'>
-                <h1>Are you sure you wan't to Clear All? Once Cleared, CANNOT BE UNDONE!!!</h1>
-                <div id="ResetConfirmationBtnsArea">
-                    <button id='ResetY' onClick={() => {
-                        setContent([]);
-                        setReset(!reset);
-                    }}>Yes</button>
-                    <button id='ResetN' onClick={() => setReset(!reset)}>No</button>
-                </div>
-            </div>:null}
 
         </section>
     )

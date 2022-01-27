@@ -32,10 +32,6 @@ img {
   position: relative;
 }
 
-.Playground .BlogContent .PostedBannerHide {
-  display: none;
-}
-
 .Playground .BlogContent .PostedBanner {
   position: absolute;
   top: 0;
@@ -330,6 +326,178 @@ img {
   margin: 0.5rem auto;
 }
 
+.Playground .ContentControlMsgArea .MsgArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Playground .ContentControlMsgArea .MsgArea .MsgIcon {
+  color: red;
+  border-radius: 100%;
+  -webkit-animation: errorAnimation 1s ease forwards infinite alternate;
+          animation: errorAnimation 1s ease forwards infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@-webkit-keyframes emptyAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0.5rem #fff;
+            box-shadow: 0 0 0.5rem #fff;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  33% {
+    -webkit-box-shadow: 0 0 0.5rem greenyellow;
+            box-shadow: 0 0 0.5rem greenyellow;
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+@keyframes emptyAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0.5rem #fff;
+            box-shadow: 0 0 0.5rem #fff;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  33% {
+    -webkit-box-shadow: 0 0 0.5rem greenyellow;
+            box-shadow: 0 0 0.5rem greenyellow;
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+@-webkit-keyframes errorAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0.5rem #fff;
+            box-shadow: 0 0 0.5rem #fff;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  33% {
+    -webkit-box-shadow: 0 0 0.5rem red;
+            box-shadow: 0 0 0.5rem red;
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+@keyframes errorAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0.5rem #fff;
+            box-shadow: 0 0 0.5rem #fff;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  33% {
+    -webkit-box-shadow: 0 0 0.5rem red;
+            box-shadow: 0 0 0.5rem red;
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+.Playground .ContentControlMsgArea .MsgArea .msg {
+  margin: auto;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: red;
+}
+
+.Playground .ContentControlMsgArea .MsgArea #EmptyBlog {
+  color: #fff;
+  -webkit-animation: emptyAnimation 1s ease forwards infinite alternate;
+          animation: emptyAnimation 1s ease forwards infinite alternate;
+}
+
+.Playground .ContentControlMsgArea .ResetArea {
+  background: lightblue;
+  border-right: 1rem;
+  -webkit-box-shadow: 0 0 1rem red, 0 0 1rem #fff inset;
+          box-shadow: 0 0 1rem red, 0 0 1rem #fff inset;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 90%;
+}
+
+.Playground .ContentControlMsgArea .ResetArea h1 {
+  font-size: 1.5rem;
+  color: blueviolet;
+}
+
+.Playground .ContentControlMsgArea .ResetArea #ResetConfirmationBtnsArea {
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.Playground .ContentControlMsgArea .ResetArea #ResetConfirmationBtnsArea button {
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 1rem #909090;
+          box-shadow: 0 0 1rem #909090;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.Playground .ContentControlMsgArea .ResetArea #ResetConfirmationBtnsArea #ResetY {
+  color: red;
+  border: 3px solid red;
+}
+
+.Playground .ContentControlMsgArea .ResetArea #ResetConfirmationBtnsArea #ResetN {
+  color: blueviolet;
+  border: 3px solid blueviolet;
+}
+
 .Playground .FinalisingBtns {
   margin: 1rem 0;
   display: -webkit-box;
@@ -376,51 +544,6 @@ img {
           transform: scale(0.9);
   border: 4px solid green;
   cursor: progress;
-}
-
-.Playground .ResetArea {
-  background: lightblue;
-  border-right: 12px;
-  -webkit-box-shadow: 0 0 1rem red, 0 0 1rem #fff inset;
-          box-shadow: 0 0 1rem red, 0 0 1rem #fff inset;
-  padding: 1rem;
-  margin: 1rem auto;
-  max-width: 90%;
-}
-
-.Playground .ResetArea h1 {
-  font-size: 1.5rem;
-  color: blueviolet;
-}
-
-.Playground .ResetArea #ResetConfirmationBtnsArea {
-  margin: 1rem auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.Playground .ResetArea #ResetConfirmationBtnsArea button {
-  cursor: pointer;
-  border-radius: 6px;
-  -webkit-box-shadow: 0 0 1rem #909090;
-          box-shadow: 0 0 1rem #909090;
-  padding: 1rem;
-  font-weight: bold;
-  font-size: 1.3rem;
-}
-
-.Playground .ResetArea #ResetConfirmationBtnsArea #ResetY {
-  color: red;
-  border: 3px solid red;
-}
-
-.Playground .ResetArea #ResetConfirmationBtnsArea #ResetN {
-  color: blueviolet;
-  border: 3px solid blueviolet;
 }
 
 .hide {

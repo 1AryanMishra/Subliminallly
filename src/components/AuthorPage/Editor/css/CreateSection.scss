@@ -19,10 +19,6 @@ img{
         flex-direction: column;
         position: relative;
 
-        .PostedBannerHide{
-            display: none;
-        }
-    
         .PostedBanner{
             position: absolute;
             top: 0;
@@ -65,17 +61,6 @@ img{
                 font-size: 1.5rem;
                 font-weight: bold;
                 color: #909;
-            }
-        }
-
-        .retryContainer{
-            display: flex;
-            margin: auto;
-
-            p{
-                margin: auto;
-                font-size: 2rem;
-                color: lightblue;
             }
         }
     
@@ -261,6 +246,108 @@ img{
     }
 
 
+    .ContentControlMsgArea{
+
+        .MsgArea{
+            display: flex;
+            margin: 1rem auto;
+            flex-direction: column;
+            align-items: center;    
+
+            .MsgIcon{
+                color: red;
+                border-radius: 100%;
+                animation: errorAnimation 1s ease forwards infinite alternate;
+                margin-bottom: 1rem;
+            }
+
+            @keyframes emptyAnimation{
+                0%{
+                    box-shadow: 0 0 0.5rem #fff;
+                    transform: rotateZ(0deg);
+                }
+                33%{
+                    box-shadow: 0 0 0.5rem greenyellow;
+                    transform: rotateZ(30deg);
+                }
+                66%{
+                    transform: rotateZ(-30deg);
+                }
+                100%{
+                    transform: rotateZ(0deg);
+                }
+            }
+
+            @keyframes errorAnimation{
+                0%{
+                    box-shadow: 0 0 0.5rem #fff;
+                    transform: rotateZ(0deg);
+                }
+                33%{
+                    box-shadow: 0 0 0.5rem red;
+                    transform: rotateZ(30deg);
+                }
+                66%{
+                    transform: rotateZ(-30deg);
+                }
+                100%{
+                    transform: rotateZ(0deg);
+                }
+            }
+    
+            .msg{
+                margin: auto;
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: red;
+            }
+
+            #EmptyBlog{
+                color: #fff;
+                animation: emptyAnimation 1s ease forwards infinite alternate;
+            }
+    
+        }
+
+        .ResetArea{
+            background: lightblue;
+            border-right: 1rem;
+            box-shadow: 0 0 1rem red, 0 0 1rem #fff inset;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 90%;
+    
+            h1{
+                font-size: 1.5rem;
+                color: blueviolet;
+            }
+    
+            #ResetConfirmationBtnsArea{
+                margin: 1rem auto;
+                display: flex;
+                justify-content: space-evenly;
+                
+                button{
+                    cursor: pointer;
+                    border-radius: 6px;
+                    box-shadow: 0 0 1rem #909090;
+                    padding: 1rem;
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                }
+                #ResetY{
+                    color: red;
+                    border: 3px solid red;
+                }
+                #ResetN{
+                    color: blueviolet;
+                    border: 3px solid blueviolet;
+                }
+            }
+        }
+    }
+
+
     .FinalisingBtns{
         margin: 1rem 0;
         display: flex;
@@ -294,43 +381,6 @@ img{
         transform: scale(0.9);
         border: 4px solid green;
         cursor: progress;
-    }
-
-    .ResetArea{
-        background: lightblue;
-        border-right: 12px;
-        box-shadow: 0 0 1rem red, 0 0 1rem #fff inset;
-        padding: 1rem;
-        margin: 1rem auto;
-        max-width: 90%;
-
-        h1{
-            font-size: 1.5rem;
-            color: blueviolet;
-        }
-
-        #ResetConfirmationBtnsArea{
-            margin: 1rem auto;
-            display: flex;
-            justify-content: space-evenly;
-            
-            button{
-                cursor: pointer;
-                border-radius: 6px;
-                box-shadow: 0 0 1rem #909090;
-                padding: 1rem;
-                font-weight: bold;
-                font-size: 1.3rem;
-            }
-            #ResetY{
-                color: red;
-                border: 3px solid red;
-            }
-            #ResetN{
-                color: blueviolet;
-                border: 3px solid blueviolet;
-            }
-        }
     }
 }
 

@@ -1,7 +1,6 @@
 //CSS
 import './css/App.css';
 
-
 import Header from '../Header/Header';
 import About from '../About/About';
 import Main from '../Main/Main';
@@ -11,6 +10,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 
 function App(){
+
     return(
         <BrowserRouter>
             <div className="App">

@@ -30,8 +30,8 @@
 #Posts .Post {
   margin: 1rem auto;
   width: 90%;
-  -webkit-box-shadow: 0 0 1rem #fff inset, 0 0 0.5rem blue;
-          box-shadow: 0 0 1rem #fff inset, 0 0 0.5rem blue;
+  -webkit-box-shadow: 0 0 1rem #fff;
+          box-shadow: 0 0 1rem #fff;
   padding: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -87,6 +87,7 @@
   font-weight: bold;
   font-size: 1rem;
   color: #fff;
+  margin: 0.2rem;
 }
 
 #Posts .Post .blogMoreAction .showMoreAction .PostedDate {

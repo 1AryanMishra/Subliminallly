@@ -63,7 +63,8 @@ function Image({ContentID}){
                         <button className={contentControl?"ContentControlBtn":"ContentControlBtnHide"} onClick={() => {
                             content[ContentID].content = {
                                 imageSrc : imageSrc,
-                                imageCredit : ImageCredit
+                                imageCredit : ImageCredit,
+                                position : ContentID
                             };
                             if(ImageCredit !== ''){
                                 setIsImageCredit(true);

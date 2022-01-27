@@ -14,203 +14,339 @@ img{
     display: flex;
     flex-flow: column nowrap;
 
-    .UpdateCancelSection{
-        box-shadow: 0 0 1rem #fff inset;
-        padding: 0.5rem 0;
+    .BlogContent{
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-
-        .UpdateToggler{
-            border-radius: 100%;
-            color: #909;
-            box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
-        }
-
-        .UpdateLabel{
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #909;
-        }
-    }
-
-    .AddTitle{
-        box-shadow: 0 0 1em #fff;
-        padding: 1em 0;
+        flex-direction: column;
         position: relative;
-        display: flex;
 
-        .TitleControlBtn{
+        .PostedBanner{
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-        }
-
-        .TitleInput{
-            box-shadow: 0 0 1em #fff;
-            margin: auto;
-            font-size: 1.4rem;
-            padding: 0.2rem;
-            border-radius: 6px;
-            text-align: center;
-        }
-
-        .TitleInputHide, .MainTitleHide{
-            height: 0;
-            width: 0;
-            visibility: hidden;
-        }
-
-        .MainTitle{
-            margin: auto;
-            font-size: 2rem;
-            text-align: center;
-        }
-    }
-
-    .AddContent{
-        margin: auto 0;
-        margin-top: 1rem;
-        display: flex;
-        align-items: center;
-        flex-flow: column nowrap;
-        box-shadow: 0 0 1em #fff;
-
-        .ContentTypeBtnsArea{
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.5);
             display: flex;
-            flex-flow: row nowrap;
-            order: 1;
-            width: 100%;
-            box-shadow: 0 0 1em #fff inset;
-
-            .ContentBtn{
-                border-radius: 6px;
-                padding: 0.2rem 1rem;
+            flex-direction: column;
+    
+            #PostedIcon{
+                color: greenyellow;
                 margin: auto;
+                margin-bottom: 1rem;
+            }
+    
+            h1{
+                font-size: 3rem;
+                color: greenyellow;
+                margin: auto;
+                margin-top: 1rem;
             }
         }
-
-        .ContentLabel{
-            width: 50%;
-            text-align: center;
-            padding: 0.2rem;
-            font-weight: bold;
-            border-bottom-left-radius: 12px;
-            border-bottom-right-radius: 12px;
-            font-size: 1.4rem;
-            color: #606060;
-            box-shadow: 0 0 1em #fff inset;
-        }
-
-        .ContentArea{
+    
+        .UpdateCancelSection{
+            box-shadow: 0 0 1rem #fff inset;
+            padding: 0.5rem 0;
             display: flex;
-            flex-flow: column nowrap;
-            box-shadow: 0 0 1em #fff;
-            padding: 1rem 0;
-            width: 95%;
-
-            .Content-Append-Area{
-                display: flex;
-                flex-flow: column nowrap;
-                width: 100%;
-
-                .BtnsGrp{
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                    
-                    .AppendBtn{
-                        border: none;
-                        outline: none;
-                        border-radius: 6px;
-                        padding: 0.5rem;
-                        margin: auto;
-                        box-shadow: 0 0 0.5rem #909090;
-                    }
-        
-                    .AppendBtn:hover{
-                        transform: scale(1.1);
-                        box-shadow: 0 0 0.5em #606060;
-                    }
-
-                    .MiniContentPane{
-                        display: flex;
-                        justify-content: space-evenly;
-                    }
-                }
-
+            justify-content: space-evenly;
+            align-items: center;
+    
+            .UpdateToggler{
+                border-radius: 100%;
+                color: #909;
+                box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
             }
-
-            .ContentControlBtnsArea{
+    
+            .UpdateLabel{
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #909;
+            }
+        }
+    
+        .AddTitle{
+            box-shadow: 0 0 1em #fff;
+            padding: 1em 0;
+            position: relative;
+            display: flex;
+    
+            .TitleControlBtn{
                 position: absolute;
                 top: 1rem;
                 right: 1rem;
-                margin: 0.2rem 0;
-
-                .ContentRemovedLabel{
-                    margin: 0.5rem auto;
-                }
-
-                .ContentControlBtnHide{
-                    transition: 0.2s ease;
-                    visibility: hidden;
-                    width: 0;
-                    overflow: hidden;
-                }
-                .ContentControlBtn{
-                    transition: 0.2s ease;
-                    box-shadow: 0 0 0.5em #606060;
-                    margin-right: 1rem;
-                    padding: 0.2rem 1rem;
+            }
+    
+            .TitleInput{
+                box-shadow: 0 0 1em #fff;
+                margin: auto;
+                font-size: 1.4rem;
+                padding: 0.2rem;
+                border-radius: 6px;
+                text-align: center;
+            }
+    
+            .TitleInputHide, .MainTitleHide{
+                height: 0;
+                width: 0;
+                visibility: hidden;
+            }
+    
+            .MainTitle{
+                margin: auto;
+                font-size: 2rem;
+                text-align: center;
+            }
+        }
+    
+        .AddContent{
+            margin: auto 0;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            flex-flow: column nowrap;
+            box-shadow: 0 0 1em #fff;
+    
+            .ContentTypeBtnsArea{
+                display: flex;
+                flex-flow: row nowrap;
+                order: 1;
+                width: 100%;
+                box-shadow: 0 0 1em #fff inset;
+    
+                .ContentBtn{
                     border-radius: 6px;
+                    padding: 0.2rem 1rem;
+                    margin: auto;
                 }
             }
-
-            .TextInputArea, .ImageInputArea, .VideoInputArea{
-                position: relative;
-                margin: 0.5rem 0;
+    
+            .ContentLabel{
+                width: 50%;
+                text-align: center;
+                padding: 0.2rem;
+                font-weight: bold;
+                border-bottom-left-radius: 12px;
+                border-bottom-right-radius: 12px;
+                font-size: 1.4rem;
+                color: #606060;
+                box-shadow: 0 0 1em #fff inset;
+            }
+    
+            .ContentArea{
                 display: flex;
                 flex-flow: column nowrap;
-                justify-content: center;
-                padding: 1rem;
-
-                .ContentInputArea{
-                    max-width: 100%;
+                box-shadow: 0 0 1em #fff;
+                padding: 1rem 0;
+                width: 95%;
+    
+                .Content-Append-Area{
+                    display: flex;
+                    flex-flow: column nowrap;
                     width: 100%;
-                    font-size: 1.4rem;
+    
+                    .BtnsGrp{
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        
+                        .AppendBtn{
+                            cursor: pointer;
+                            border: none;
+                            outline: none;
+                            border-radius: 6px;
+                            padding: 0.5rem;
+                            margin: auto;
+                            box-shadow: 0 0 0.5rem #909090;
+                        }
+            
+                        .AppendBtn:hover{
+                            transform: scale(1.1);
+                            box-shadow: 0 0 0.5em #606060;
+                        }
+    
+                        .MiniContentPane{
+                            cursor: pointer;
+                            display: flex;
+                            justify-content: space-evenly;
+                        }
+                    }
                 }
-            }
-
-            .ImgContent{
-                margin: auto;
-            }
-
-            .ImageCreditHide, .VideoCreditHide{
-                display: none;
-            }
-            .ImageCreditInput, .VideoCreditInput{
-                margin-top: 0.5rem;
-                text-align: center;
-                font-size: 1rem;
-            }
-
-            .ParaContent{
-                max-width: 100%;
-                font-size: 1.5rem;
-            }
-
-            .VideoFrame{
-                margin: auto;
-                width: 20em;
-                height: 10em;
-                max-width: 100%;
-            }
-
-            .VideoCredit, .ImageCredit{
-                margin: 0.5rem auto;
+    
+                .ContentControlBtnsArea{
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    margin: 0.2rem 0;
+    
+                    .ContentRemovedLabel{
+                        margin: 0.5rem auto;
+                    }
+    
+                    .ContentControlBtnHide{
+                        transition: 0.2s ease;
+                        visibility: hidden;
+                        width: 0;
+                        overflow: hidden;
+                    }
+                    .ContentControlBtn{
+                        cursor: pointer;
+                        transition: 0.2s ease;
+                        box-shadow: 0 0 0.5em #606060;
+                        margin-right: 1rem;
+                        padding: 0.2rem 1rem;
+                        border-radius: 6px;
+                    }
+                }
+    
+                .TextInputArea, .ImageInputArea, .VideoInputArea{
+                    position: relative;
+                    margin: 0.5rem 0;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    justify-content: center;
+                    padding: 1rem;
+    
+                    .ContentInputArea{
+                        max-width: 100%;
+                        width: 100%;
+                        font-size: 1.4rem;
+                    }
+                }
+    
+                .ImgContent{
+                    margin: auto;
+                }
+    
+                .ImageCreditHide, .VideoCreditHide{
+                    display: none;
+                }
+                .ImageCreditInput, .VideoCreditInput{
+                    margin-top: 0.5rem;
+                    text-align: center;
+                    font-size: 1rem;
+                }
+    
+                .ParaContent{
+                    max-width: 100%;
+                    font-size: 1.5rem;
+                }
+    
+                .VideoFrame{
+                    margin: auto;
+                    width: 20em;
+                    height: 10em;
+                    max-width: 100%;
+                }
+    
+                .VideoCredit, .ImageCredit{
+                    margin: 0.5rem auto;
+                }
             }
         }
     }
+
+
+    .ContentControlMsgArea{
+
+        .MsgArea{
+            display: flex;
+            margin: 1rem auto;
+            flex-direction: column;
+            align-items: center;    
+
+            .MsgIcon{
+                color: red;
+                border-radius: 100%;
+                animation: errorAnimation 1s ease forwards infinite alternate;
+                margin-bottom: 1rem;
+            }
+
+            @keyframes emptyAnimation{
+                0%{
+                    box-shadow: 0 0 0.5rem #fff;
+                    transform: rotateZ(0deg);
+                }
+                33%{
+                    box-shadow: 0 0 0.5rem greenyellow;
+                    transform: rotateZ(30deg);
+                }
+                66%{
+                    transform: rotateZ(-30deg);
+                }
+                100%{
+                    transform: rotateZ(0deg);
+                }
+            }
+
+            @keyframes errorAnimation{
+                0%{
+                    box-shadow: 0 0 0.5rem #fff;
+                    transform: rotateZ(0deg);
+                }
+                33%{
+                    box-shadow: 0 0 0.5rem red;
+                    transform: rotateZ(30deg);
+                }
+                66%{
+                    transform: rotateZ(-30deg);
+                }
+                100%{
+                    transform: rotateZ(0deg);
+                }
+            }
+    
+            .msg{
+                margin: auto;
+                font-size: 1.3rem;
+                font-weight: bold;
+                color: red;
+            }
+
+            #EmptyBlog{
+                color: #fff;
+                animation: emptyAnimation 1s ease forwards infinite alternate;
+            }
+    
+        }
+
+        .ResetArea{
+            background: lightblue;
+            border-right: 1rem;
+            box-shadow: 0 0 1rem red, 0 0 1rem #fff inset;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 90%;
+    
+            h1{
+                font-size: 1.5rem;
+                color: blueviolet;
+            }
+    
+            #ResetConfirmationBtnsArea{
+                margin: 1rem auto;
+                display: flex;
+                justify-content: space-evenly;
+                
+                button{
+                    cursor: pointer;
+                    border-radius: 6px;
+                    box-shadow: 0 0 1rem #909090;
+                    padding: 1rem;
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                }
+                #ResetY{
+                    color: red;
+                    border: 3px solid red;
+                }
+                #ResetN{
+                    color: blueviolet;
+                    border: 3px solid blueviolet;
+                }
+            }
+        }
+    }
+
 
     .FinalisingBtns{
         margin: 1rem 0;
@@ -218,6 +354,7 @@ img{
         justify-content: space-evenly;
 
         .FinalisingBtn{
+            cursor: pointer;
             transition: 0.1s ease;
             padding: 0.5rem 1rem;
             border-radius: 6px;
@@ -243,38 +380,7 @@ img{
     .Post{
         transform: scale(0.9);
         border: 4px solid green;
-    }
-
-    .ResetArea{
-        margin: 1rem auto;
-        max-width: 90%;
-
-        h1{
-            font-size: 1.5rem;
-            color: blueviolet;
-        }
-
-        #ResetConfirmationBtnsArea{
-            margin: 1rem auto;
-            display: flex;
-            justify-content: space-evenly;
-            
-            button{
-                border-radius: 6px;
-                box-shadow: 0 0 1rem #909090;
-                padding: 1rem;
-                font-weight: bold;
-                font-size: 1.3rem;
-            }
-            #ResetY{
-                color: red;
-                border: 3px solid red;
-            }
-            #ResetN{
-                color: blueviolet;
-                border: 3px solid blueviolet;
-            }
-        }
+        cursor: progress;
     }
 }
 

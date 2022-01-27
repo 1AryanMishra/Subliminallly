@@ -21,7 +21,48 @@ img {
           flex-flow: column nowrap;
 }
 
-.Playground .UpdateCancelSection {
+.Playground .BlogContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.Playground .BlogContent .PostedBanner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Playground .BlogContent .PostedBanner #PostedIcon {
+  color: greenyellow;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.Playground .BlogContent .PostedBanner h1 {
+  font-size: 3rem;
+  color: greenyellow;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.Playground .BlogContent .UpdateCancelSection {
   -webkit-box-shadow: 0 0 1rem #fff inset;
           box-shadow: 0 0 1rem #fff inset;
   padding: 0.5rem 0;
@@ -36,20 +77,20 @@ img {
           align-items: center;
 }
 
-.Playground .UpdateCancelSection .UpdateToggler {
+.Playground .BlogContent .UpdateCancelSection .UpdateToggler {
   border-radius: 100%;
   color: #909;
   -webkit-box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
           box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
 }
 
-.Playground .UpdateCancelSection .UpdateLabel {
+.Playground .BlogContent .UpdateCancelSection .UpdateLabel {
   font-size: 1.5rem;
   font-weight: bold;
   color: #909;
 }
 
-.Playground .AddTitle {
+.Playground .BlogContent .AddTitle {
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;
   padding: 1em 0;
@@ -59,13 +100,13 @@ img {
   display: flex;
 }
 
-.Playground .AddTitle .TitleControlBtn {
+.Playground .BlogContent .AddTitle .TitleControlBtn {
   position: absolute;
   top: 1rem;
   right: 1rem;
 }
 
-.Playground .AddTitle .TitleInput {
+.Playground .BlogContent .AddTitle .TitleInput {
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;
   margin: auto;
@@ -75,19 +116,19 @@ img {
   text-align: center;
 }
 
-.Playground .AddTitle .TitleInputHide, .Playground .AddTitle .MainTitleHide {
+.Playground .BlogContent .AddTitle .TitleInputHide, .Playground .BlogContent .AddTitle .MainTitleHide {
   height: 0;
   width: 0;
   visibility: hidden;
 }
 
-.Playground .AddTitle .MainTitle {
+.Playground .BlogContent .AddTitle .MainTitle {
   margin: auto;
   font-size: 2rem;
   text-align: center;
 }
 
-.Playground .AddContent {
+.Playground .BlogContent .AddContent {
   margin: auto 0;
   margin-top: 1rem;
   display: -webkit-box;
@@ -104,7 +145,7 @@ img {
           box-shadow: 0 0 1em #fff;
 }
 
-.Playground .AddContent .ContentTypeBtnsArea {
+.Playground .BlogContent .AddContent .ContentTypeBtnsArea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -120,13 +161,13 @@ img {
           box-shadow: 0 0 1em #fff inset;
 }
 
-.Playground .AddContent .ContentTypeBtnsArea .ContentBtn {
+.Playground .BlogContent .AddContent .ContentTypeBtnsArea .ContentBtn {
   border-radius: 6px;
   padding: 0.2rem 1rem;
   margin: auto;
 }
 
-.Playground .AddContent .ContentLabel {
+.Playground .BlogContent .AddContent .ContentLabel {
   width: 50%;
   text-align: center;
   padding: 0.2rem;
@@ -139,7 +180,7 @@ img {
           box-shadow: 0 0 1em #fff inset;
 }
 
-.Playground .AddContent .ContentArea {
+.Playground .BlogContent .AddContent .ContentArea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -153,7 +194,7 @@ img {
   width: 95%;
 }
 
-.Playground .AddContent .ContentArea .Content-Append-Area {
+.Playground .BlogContent .AddContent .ContentArea .Content-Append-Area {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -164,7 +205,7 @@ img {
   width: 100%;
 }
 
-.Playground .AddContent .ContentArea .Content-Append-Area .BtnsGrp {
+.Playground .BlogContent .AddContent .ContentArea .Content-Append-Area .BtnsGrp {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -175,7 +216,8 @@ img {
           flex-direction: column;
 }
 
-.Playground .AddContent .ContentArea .Content-Append-Area .BtnsGrp .AppendBtn {
+.Playground .BlogContent .AddContent .ContentArea .Content-Append-Area .BtnsGrp .AppendBtn {
+  cursor: pointer;
   border: none;
   outline: none;
   border-radius: 6px;
@@ -185,14 +227,15 @@ img {
           box-shadow: 0 0 0.5rem #909090;
 }
 
-.Playground .AddContent .ContentArea .Content-Append-Area .BtnsGrp .AppendBtn:hover {
+.Playground .BlogContent .AddContent .ContentArea .Content-Append-Area .BtnsGrp .AppendBtn:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
   -webkit-box-shadow: 0 0 0.5em #606060;
           box-shadow: 0 0 0.5em #606060;
 }
 
-.Playground .AddContent .ContentArea .Content-Append-Area .BtnsGrp .MiniContentPane {
+.Playground .BlogContent .AddContent .ContentArea .Content-Append-Area .BtnsGrp .MiniContentPane {
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,18 +244,18 @@ img {
           justify-content: space-evenly;
 }
 
-.Playground .AddContent .ContentArea .ContentControlBtnsArea {
+.Playground .BlogContent .AddContent .ContentArea .ContentControlBtnsArea {
   position: absolute;
   top: 1rem;
   right: 1rem;
   margin: 0.2rem 0;
 }
 
-.Playground .AddContent .ContentArea .ContentControlBtnsArea .ContentRemovedLabel {
+.Playground .BlogContent .AddContent .ContentArea .ContentControlBtnsArea .ContentRemovedLabel {
   margin: 0.5rem auto;
 }
 
-.Playground .AddContent .ContentArea .ContentControlBtnsArea .ContentControlBtnHide {
+.Playground .BlogContent .AddContent .ContentArea .ContentControlBtnsArea .ContentControlBtnHide {
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   visibility: hidden;
@@ -220,7 +263,8 @@ img {
   overflow: hidden;
 }
 
-.Playground .AddContent .ContentArea .ContentControlBtnsArea .ContentControlBtn {
+.Playground .BlogContent .AddContent .ContentArea .ContentControlBtnsArea .ContentControlBtn {
+  cursor: pointer;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
   -webkit-box-shadow: 0 0 0.5em #606060;
@@ -230,7 +274,7 @@ img {
   border-radius: 6px;
 }
 
-.Playground .AddContent .ContentArea .TextInputArea, .Playground .AddContent .ContentArea .ImageInputArea, .Playground .AddContent .ContentArea .VideoInputArea {
+.Playground .BlogContent .AddContent .ContentArea .TextInputArea, .Playground .BlogContent .AddContent .ContentArea .ImageInputArea, .Playground .BlogContent .AddContent .ContentArea .VideoInputArea {
   position: relative;
   margin: 0.5rem 0;
   display: -webkit-box;
@@ -246,40 +290,212 @@ img {
   padding: 1rem;
 }
 
-.Playground .AddContent .ContentArea .TextInputArea .ContentInputArea, .Playground .AddContent .ContentArea .ImageInputArea .ContentInputArea, .Playground .AddContent .ContentArea .VideoInputArea .ContentInputArea {
+.Playground .BlogContent .AddContent .ContentArea .TextInputArea .ContentInputArea, .Playground .BlogContent .AddContent .ContentArea .ImageInputArea .ContentInputArea, .Playground .BlogContent .AddContent .ContentArea .VideoInputArea .ContentInputArea {
   max-width: 100%;
   width: 100%;
   font-size: 1.4rem;
 }
 
-.Playground .AddContent .ContentArea .ImgContent {
+.Playground .BlogContent .AddContent .ContentArea .ImgContent {
   margin: auto;
 }
 
-.Playground .AddContent .ContentArea .ImageCreditHide, .Playground .AddContent .ContentArea .VideoCreditHide {
+.Playground .BlogContent .AddContent .ContentArea .ImageCreditHide, .Playground .BlogContent .AddContent .ContentArea .VideoCreditHide {
   display: none;
 }
 
-.Playground .AddContent .ContentArea .ImageCreditInput, .Playground .AddContent .ContentArea .VideoCreditInput {
+.Playground .BlogContent .AddContent .ContentArea .ImageCreditInput, .Playground .BlogContent .AddContent .ContentArea .VideoCreditInput {
   margin-top: 0.5rem;
   text-align: center;
   font-size: 1rem;
 }
 
-.Playground .AddContent .ContentArea .ParaContent {
+.Playground .BlogContent .AddContent .ContentArea .ParaContent {
   max-width: 100%;
   font-size: 1.5rem;
 }
 
-.Playground .AddContent .ContentArea .VideoFrame {
+.Playground .BlogContent .AddContent .ContentArea .VideoFrame {
   margin: auto;
   width: 20em;
   height: 10em;
   max-width: 100%;
 }
 
-.Playground .AddContent .ContentArea .VideoCredit, .Playground .AddContent .ContentArea .ImageCredit {
+.Playground .BlogContent .AddContent .ContentArea .VideoCredit, .Playground .BlogContent .AddContent .ContentArea .ImageCredit {
   margin: 0.5rem auto;
+}
+
+.Playground .ContentControlMsgArea .MsgArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Playground .ContentControlMsgArea .MsgArea .MsgIcon {
+  color: red;
+  border-radius: 100%;
+  -webkit-animation: errorAnimation 1s ease forwards infinite alternate;
+          animation: errorAnimation 1s ease forwards infinite alternate;
+  margin-bottom: 1rem;
+}
+
+@-webkit-keyframes emptyAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0.5rem #fff;
+            box-shadow: 0 0 0.5rem #fff;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  33% {
+    -webkit-box-shadow: 0 0 0.5rem greenyellow;
+            box-shadow: 0 0 0.5rem greenyellow;
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+@keyframes emptyAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0.5rem #fff;
+            box-shadow: 0 0 0.5rem #fff;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  33% {
+    -webkit-box-shadow: 0 0 0.5rem greenyellow;
+            box-shadow: 0 0 0.5rem greenyellow;
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+@-webkit-keyframes errorAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0.5rem #fff;
+            box-shadow: 0 0 0.5rem #fff;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  33% {
+    -webkit-box-shadow: 0 0 0.5rem red;
+            box-shadow: 0 0 0.5rem red;
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+@keyframes errorAnimation {
+  0% {
+    -webkit-box-shadow: 0 0 0.5rem #fff;
+            box-shadow: 0 0 0.5rem #fff;
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  33% {
+    -webkit-box-shadow: 0 0 0.5rem red;
+            box-shadow: 0 0 0.5rem red;
+    -webkit-transform: rotateZ(30deg);
+            transform: rotateZ(30deg);
+  }
+  66% {
+    -webkit-transform: rotateZ(-30deg);
+            transform: rotateZ(-30deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+}
+
+.Playground .ContentControlMsgArea .MsgArea .msg {
+  margin: auto;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: red;
+}
+
+.Playground .ContentControlMsgArea .MsgArea #EmptyBlog {
+  color: #fff;
+  -webkit-animation: emptyAnimation 1s ease forwards infinite alternate;
+          animation: emptyAnimation 1s ease forwards infinite alternate;
+}
+
+.Playground .ContentControlMsgArea .ResetArea {
+  background: lightblue;
+  border-right: 1rem;
+  -webkit-box-shadow: 0 0 1rem red, 0 0 1rem #fff inset;
+          box-shadow: 0 0 1rem red, 0 0 1rem #fff inset;
+  padding: 1rem;
+  margin: 1rem auto;
+  max-width: 90%;
+}
+
+.Playground .ContentControlMsgArea .ResetArea h1 {
+  font-size: 1.5rem;
+  color: blueviolet;
+}
+
+.Playground .ContentControlMsgArea .ResetArea #ResetConfirmationBtnsArea {
+  margin: 1rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.Playground .ContentControlMsgArea .ResetArea #ResetConfirmationBtnsArea button {
+  cursor: pointer;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 0 1rem #909090;
+          box-shadow: 0 0 1rem #909090;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.Playground .ContentControlMsgArea .ResetArea #ResetConfirmationBtnsArea #ResetY {
+  color: red;
+  border: 3px solid red;
+}
+
+.Playground .ContentControlMsgArea .ResetArea #ResetConfirmationBtnsArea #ResetN {
+  color: blueviolet;
+  border: 3px solid blueviolet;
 }
 
 .Playground .FinalisingBtns {
@@ -293,6 +509,7 @@ img {
 }
 
 .Playground .FinalisingBtns .FinalisingBtn {
+  cursor: pointer;
   -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
   padding: 0.5rem 1rem;
@@ -326,45 +543,7 @@ img {
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
   border: 4px solid green;
-}
-
-.Playground .ResetArea {
-  margin: 1rem auto;
-  max-width: 90%;
-}
-
-.Playground .ResetArea h1 {
-  font-size: 1.5rem;
-  color: blueviolet;
-}
-
-.Playground .ResetArea #ResetConfirmationBtnsArea {
-  margin: 1rem auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.Playground .ResetArea #ResetConfirmationBtnsArea button {
-  border-radius: 6px;
-  -webkit-box-shadow: 0 0 1rem #909090;
-          box-shadow: 0 0 1rem #909090;
-  padding: 1rem;
-  font-weight: bold;
-  font-size: 1.3rem;
-}
-
-.Playground .ResetArea #ResetConfirmationBtnsArea #ResetY {
-  color: red;
-  border: 3px solid red;
-}
-
-.Playground .ResetArea #ResetConfirmationBtnsArea #ResetN {
-  color: blueviolet;
-  border: 3px solid blueviolet;
+  cursor: progress;
 }
 
 .hide {

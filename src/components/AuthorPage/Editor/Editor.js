@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from 'react';
+import { useState, useContext, createContext, useEffect } from 'react';
 import { AuthContext } from '../AuthorPage';
 
 //Icon
@@ -20,6 +20,10 @@ function Editor(){
     const [searched, setSearched] = useState(false);
     const [edit, setEdit] = useState(false);
     const [editableContent, setEditableContent] = useState([]);
+
+
+    useEffect(() => window.scrollTo(0, 0), []);
+
 
     return(
         <main className="AuthorPage">

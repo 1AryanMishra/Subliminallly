@@ -1,4 +1,7 @@
 import { createContext, useState, useContext } from 'react';
+
+
+import axios from 'axios';
 import uuid from 'react-uuid';
 import Text from "./Text/Text";
 import Image from "./Image/Image";
@@ -13,6 +16,8 @@ import { VscAdd } from 'react-icons/vsc';
 import { IoCheckmarkDoneSharp } from 'react-icons/io5';
 import { VscClearAll } from 'react-icons/vsc';
 import { GrSend } from 'react-icons/gr';
+import { FcApproval } from 'react-icons/fc';
+import { MdError } from 'react-icons/md';
 
 //CSS
 import '../css/CreateSection.css';
@@ -32,8 +37,10 @@ function CreateSection(){
     const [mainTitle, setMainTitle] = useState('');
     const [final, setFinal] = useState(false);
     const [post, setPost] = useState(false);
+    const [posted, setPosted] = useState(false);
     const [append, setAppend] = useState(false);
     const [reset, setReset] = useState(false);
+    const [retry, setRetry] = useState(false);
 
     function addContent(ContentType){
         let newContent = {
@@ -44,77 +51,116 @@ function CreateSection(){
         setContent([...content, newContent])
     }
 
+
+    //Posting to the Server
+    function PostToServer(){
+        setRetry(false);
+        setPost(true);
+        axios.post('http://localhost:5000/AuthorPage', {
+            title : mainTitle,
+            content : [...content.filter(n => n.type !== 'i')]
+        })
+        .then(res => {
+            setPosted(true);
+        })
+        .catch(err => {
+            setPost(false);
+            setRetry(true);
+        });
+    }
+
+
+
+
     return(
         <section className={createNew ? 'Playground':'Playground hide'}>
-            
-            <div className="AddTitle">
-                <button className="TitleControlBtn" onClick={() => setTitleEdit(!titleEdit)}>{titleEdit?<MdDoneOutline size="1.2rem" />:<FiEdit2 size="1.2rem" />}</button>
-                <h1 className={titleEdit?'MainTitleHide':'MainTitle'}>{mainTitle}</h1>
-                <input type="text" className={titleEdit?"TitleInput":"TitleInputHide"} placeholder="Title Here..." value={mainTitle} onChange={e => setMainTitle(e.target.value)}></input>
-            </div>
 
-            <div className="AddContent">
-            
-                <p className="ContentLabel">Pen Down</p>
+            <div className='BlogContent'>
 
-                <CreateContext.Provider value={{ content, setContent, append, setAppend }}>
-                    <div className="ContentArea">
-                        {
-                            content.map((c, index) => {
-                                if(c){
-                                    if(c.type === "p"){
-                                        return(
-                                            <div className="Content-Append-Area">
-                                                <Append ContentID={index} key={uuid()}/>
-                                                <Text ContentID={index} key={c.key}/>
-                                            </div>
-                                        )
+                <div className={posted?"PostedBanner":"PostedBannerHide"}>
+                    <FcApproval id='PostedIcon' size="7rem" color='green'/>
+                    <h1>Posted</h1>
+                </div>
+
+                <div className="AddTitle">
+                    <button className="TitleControlBtn" onClick={() => setTitleEdit(!titleEdit)}>{titleEdit?<MdDoneOutline size="1.2rem" />:<FiEdit2 size="1.2rem" />}</button>
+                    <h1 className={titleEdit?'MainTitleHide':'MainTitle'}>{mainTitle}</h1>
+                    <input type="text" className={titleEdit?"TitleInput":"TitleInputHide"} placeholder="Title Here..." value={mainTitle} onChange={e => setMainTitle(e.target.value)}></input>
+                </div>
+
+                <div className="AddContent">
+                
+                    <p className="ContentLabel">Pen Down</p>
+
+                    <CreateContext.Provider value={{ content, setContent, append, setAppend }}>
+                        <div className="ContentArea">
+                            {
+                                content.map((c, index) => {
+                                    if(c){
+                                        if(c.type === "p"){
+                                            return(
+                                                <div className="Content-Append-Area" key={uuid()}>
+                                                    <Append ContentID={index} key={uuid()}/>
+                                                    <Text ContentID={index} key={c.key}/>
+                                                </div>
+                                            )
+                                        }
+                                        else if(c.type === "i"){
+                                            return(
+                                                <div className="Content-Append-Area" key={uuid()}>
+                                                    <Append ContentID={index} key={uuid()}/>
+                                                    <Image ContentID={index} key={c.key}/>
+                                                </div>
+                                            )
+                                        }
+                                        else if(c.type === 'v'){
+                                            return(
+                                                <div className="Content-Append-Area" key={uuid()}>
+                                                    <Append ContentID={index} key={uuid()}/>
+                                                    <Video ContentID={index} key={c.key}/>
+                                                </div>
+                                            )
+                                        }
+                                        else if(c.type === 'n'){
+                                            return(
+                                                <div className="Content-Append-Area" key={uuid()}>
+                                                    <p>Select Content-Type from Content-Selector Section.</p>
+                                                </div>
+                                            )
+                                        }
                                     }
-                                    else if(c.type === "i"){
-                                        return(
-                                            <div className="Content-Append-Area">
-                                                <Append ContentID={index} key={uuid()}/>
-                                                <Image ContentID={index} key={c.key}/>
-                                            </div>
-                                        )
-                                    }
-                                    else if(c.type === 'v'){
-                                        return(
-                                            <div className="Content-Append-Area">
-                                                <Append ContentID={index} key={uuid()}/>
-                                                <Video ContentID={index} key={c.key}/>
-                                            </div>
-                                        )
-                                    }
-                                    else if(c.type === 'n'){
-                                        return(
-                                            <div className="Content-Append-Area" key={uuid()}>
-                                                <p>Select Content-Type from Content-Selector Section.</p>
-                                            </div>
-                                        )
-                                    }
-                                }
-                                return(
-                                    <p key={uuid()}>NoContent</p>
-                                )
-                            })
-                        }
+                                    return(
+                                        <p key={uuid()}>NoContent</p>
+                                    )
+                                })
+                            }
+                        </div>
+                    </CreateContext.Provider>
+
+                    <div className="ContentTypeBtnsArea">
+                        <button className="ContentBtn" onClick={() => addContent('p')}><BsCardText size="2rem" /></button>
+                        <button className="ContentBtn" onClick={() => addContent('i')}><BsImage size="2rem" /></button>
+                        <button className="ContentBtn" onClick={() => addContent('v')}><FiYoutube size="2rem" /></button>
+                        <button className='ContentBtn' onClick={() => setAppend(!append)}><VscAdd/>Append</button>
+
                     </div>
-                </CreateContext.Provider>
-
-                <div className="ContentTypeBtnsArea">
-                    <button className="ContentBtn" onClick={() => addContent('p')}><BsCardText size="2rem" /></button>
-                    <button className="ContentBtn" onClick={() => addContent('i')}><BsImage size="2rem" /></button>
-                    <button className="ContentBtn" onClick={() => addContent('v')}><FiYoutube size="2rem" /></button>
-                    <button className='ContentBtn' onClick={() => setAppend(!append)}><VscAdd/>Append</button>
-
                 </div>
             </div>
 
+            {retry?<div className='retryContainer'>
+                <MdError/>
+                <p>Some error Occurred!, Please Retry.</p>
+            </div> : null}
+            
+
             <div className="FinalisingBtns">
                 <button className={reset?"reset FinalisingBtn":"FinalisingBtn"} onClick={() => setReset(!reset)}><VscClearAll size="2rem"/>Reset</button>
-                <button className={final?"Final FinalisingBtn":"FinalisingBtn"} onClick={() => setFinal(!final)}><IoCheckmarkDoneSharp size="2rem"/>Done</button>
-                <button className={final?`FinalisingBtn ${post?'Post':''}`:"FinalisingBtnHide"} onClick={() => setPost(!post)}><GrSend size="2rem"/>Post</button>
+                <button className={final?"Final FinalisingBtn":"FinalisingBtn"} onClick={() => {
+                    setFinal(!final);
+                    setPost(false);
+                    setPosted(false);
+                    }}><IoCheckmarkDoneSharp size="2rem"/>Done</button>
+                <button className={final?`FinalisingBtn ${post?'Post':''}`:"FinalisingBtnHide"} onClick={() => PostToServer()}><GrSend size="2rem"/>{post?(posted?"Posted":"Posting"):"Post"}</button>
             </div>
 
             {reset?<div className='ResetArea'>

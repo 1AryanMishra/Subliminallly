@@ -29,7 +29,7 @@
 
 #Posts .Post {
   margin: 1rem auto;
-  width: 95%;
+  width: 90%;
   -webkit-box-shadow: 0 0 1rem #fff;
           box-shadow: 0 0 1rem #fff;
   padding: 1rem;
@@ -87,6 +87,7 @@
   font-weight: bold;
   font-size: 1rem;
   color: #fff;
+  margin: 0.2rem;
 }
 
 #Posts .Post .blogMoreAction .showMoreAction .PostedDate {

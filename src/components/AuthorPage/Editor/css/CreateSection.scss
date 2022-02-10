@@ -14,6 +14,26 @@ img{
     display: flex;
     flex-flow: column nowrap;
 
+    .UpdateCancelSection{
+        box-shadow: 0 0 1rem #fff inset;
+        padding: 0.5rem 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .UpdateToggler{
+            border-radius: 100%;
+            color: #909;
+            box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+        }
+
+        .UpdateLabel{
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #909;
+        }
+    }
+
     .BlogContent{
         display: flex;
         flex-direction: column;
@@ -41,26 +61,6 @@ img{
                 color: greenyellow;
                 margin: auto;
                 margin-top: 1rem;
-            }
-        }
-    
-        .UpdateCancelSection{
-            box-shadow: 0 0 1rem #fff inset;
-            padding: 0.5rem 0;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-    
-            .UpdateToggler{
-                border-radius: 100%;
-                color: #909;
-                box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
-            }
-    
-            .UpdateLabel{
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: #909;
             }
         }
     
@@ -302,11 +302,40 @@ img{
                 color: red;
             }
 
-            #EmptyBlog{
+            
+
+            #UploadedPercentage{
+                color: #909;
+            }
+
+            
+    
+        }
+
+        #EmptyBlogArea{
+
+            #EmptyBlogIcon{
                 color: #fff;
                 animation: emptyAnimation 1s ease forwards infinite alternate;
+            } 
+        }
+
+        #ShareBlog{
+
+            #ShareBlogMsg{
+                color: #909;
             }
-    
+
+            #ShareBlogButton{
+                cursor: pointer;
+                padding: 0.3rem 0.5rem;
+                box-shadow: 0 0 0.5rem #909;
+                margin-top: 1rem;
+                border-radius: 10%;
+                animation: none;
+                color: #909;
+                font-weight: bold;
+            }
         }
 
         .ResetArea{
@@ -358,11 +387,19 @@ img{
             transition: 0.1s ease;
             padding: 0.5rem 1rem;
             border-radius: 6px;
+            font-weight: bold;
+            color: green;
             box-shadow: 0 0 1em #fff;
+
+            #UpdateBtnIcon{
+                color: greenyellow;
+            }
         }
         .FinalisingBtn:hover{
             box-shadow: 0 0 1em #606060;
         }
+
+        
     }
 
     .FinalisingBtnHide{

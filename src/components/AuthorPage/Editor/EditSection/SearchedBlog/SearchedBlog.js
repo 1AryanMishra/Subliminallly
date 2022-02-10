@@ -25,12 +25,12 @@ function SearchedBlog(){
                         setEditableContent([{
                             key : uuid(),
                             type : 'p',
-                            content : 'Jeene k lea, Socha hi nahiii, dard samhalne honge.'
+                            content : 'Paragraph 1 of the Blog to be Edited and Updated.'
                         },
                         {
                             key : uuid(),
                             type : 'p',
-                            content : 'Muskurae to, muskurane k, karz utarane honge.'
+                            content : 'Paragraph 2 of the Blog to be Edited and Updated.'
                         }
                     ])
                         }}/>

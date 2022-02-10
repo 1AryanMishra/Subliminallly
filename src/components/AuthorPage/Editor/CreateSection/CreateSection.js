@@ -16,7 +16,7 @@ import { VscAdd } from 'react-icons/vsc';
 import { IoCheckmarkDoneSharp } from 'react-icons/io5';
 import { VscClearAll } from 'react-icons/vsc';
 import { GrSend } from 'react-icons/gr';
-import { FcApproval } from 'react-icons/fc';
+import { FcApproval, FcLink } from 'react-icons/fc';
 import { MdError } from 'react-icons/md';
 import { GiEmptyWoodBucketHandle } from 'react-icons/gi';
 
@@ -43,6 +43,9 @@ function CreateSection(){
     const [reset, setReset] = useState(false);
     const [retry, setRetry] = useState(false);
     const [emptyBlog, setEmptyBlog] = useState(false);
+    const [blogLink, setBlogLink] = useState('');
+    const [linkCopied, setLinkCopied] = useState(false);
+    const [uploadPercentage, setUploadPercentage] = useState(0);
 
     function addContent(ContentType){
         let newContent = {
@@ -55,24 +58,36 @@ function CreateSection(){
 
 
     //Posting to the Server
-    function PostToServer(){
+    async function PostToServer(){
         if(content.length === 0){
             setEmptyBlog(true);
             return;
         }
         setRetry(false);
         setPost(true);
-        axios.post('http://localhost:5000/AuthorPage', {
-            title : mainTitle,
-            content : [...content.filter(n => n.type !== 'i')]
-        })
-        .then(res => {
-            setPosted(true);
-        })
-        .catch(err => {
+        setEmptyBlog(false);
+
+        
+
+        try{
+            const res = await axios.post('https://subliminally.herokuapp.com/AuthorPage/newBlog', {
+                title : mainTitle,
+                content : content
+            }, {
+                onUploadProgress : progressEvent => {
+                    setUploadPercentage(parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total)))
+            }});
+
+            if (res.data.posted) {
+                setBlogLink(res.data.blogLink);
+                setPosted(true);
+            }
+        }
+        catch(err){
+            console.log(err);
             setPost(false);
-            setRetry(true);
-        });
+            setRetry(true);    
+        }
     }
 
 
@@ -159,8 +174,8 @@ function CreateSection(){
                     <p className='msg'>Some error Occurred!, Please Retry.</p>
                 </div> : null}
 
-                {emptyBlog?<div className="MsgArea">
-                    <GiEmptyWoodBucketHandle size="5rem" id='EmptyBlog' className='MsgIcon'/>
+                {emptyBlog?<div className="MsgArea" id='EmptyBlogArea'>
+                    <GiEmptyWoodBucketHandle size="5rem" id='EmptyBlogIcon' className='MsgIcon'/>
                     <p className='msg'>Can't Post Empty Blog. Please Write Something!</p>
                 </div> : null}
 
@@ -173,23 +188,42 @@ function CreateSection(){
                             setRetry(false);
                             setEmptyBlog(false);
                             setFinal(false);
+                            setMainTitle('');
+                            setTitleEdit(true);
+                            setPost(false);
+                            setPosted(false);
+                            setUploadPercentage(0);
                         }}>Yes</button>
                         <button id='ResetN' onClick={() => setReset(!reset)}>No</button>
                     </div>
                 </div>:null}
                 
+                {posted?<div className='MsgArea' id='ShareBlog'>
+                    <p className='msg' id='ShareBlogMsg'>
+                        Share your blog.
+                    </p>
+                    <button className='MsgIcon' id='ShareBlogButton' onClick={() => {
+                        navigator.clipboard.writeText(blogLink);
+                        setLinkCopied(true);
+                    }}><FcLink size='3rem'/>{linkCopied?"Copied":"Link"}</button>
+                </div> : null}
+
+                {post ? <div className='MsgArea' id='UploadedArea'>
+                    <p className='msg' id='UploadPercentage'>Uploaded {posted ? 100 : uploadPercentage}%</p>
+                </div> : null}
+
             </section>
             
 
             <div className="FinalisingBtns">
-                <button className={reset?"reset FinalisingBtn":"FinalisingBtn"} onClick={() => setReset(!reset)}><VscClearAll size="2rem"/>Reset</button>
+                <button className={reset?"reset FinalisingBtn":"FinalisingBtn"} onClick={() => setReset(!reset)}><VscClearAll id='ResetBtnIcon' size="2rem"/>Reset</button>
                 <button className={final?"Final FinalisingBtn":"FinalisingBtn"} onClick={() => {
                     setFinal(!final);
                     setPost(false);
                     setPosted(false);
                     setRetry(false);
-                    }}><IoCheckmarkDoneSharp size="2rem"/>Done</button>
-                <button className={final?`FinalisingBtn ${post?'Post':''}`:"FinalisingBtnHide"} onClick={() => PostToServer()}><GrSend size="2rem"/>{retry ? "Retry" : post?(posted?"Posted":"Posting"):"Post"}</button>
+                    }}><IoCheckmarkDoneSharp id='DoneBtnIcon' size="2rem"/>Done</button>
+                <button className={final?`FinalisingBtn ${post?'Post':''}`:"FinalisingBtnHide"} onClick={() => PostToServer()}><GrSend id='SendBtnIcon' size="2rem"/>{retry ? "Retry" : post?(posted?"Posted":"Posting"):"Post"}</button>
             </div>
 
         </section>

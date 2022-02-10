@@ -21,6 +21,34 @@ img {
           flex-flow: column nowrap;
 }
 
+.Playground .UpdateCancelSection {
+  -webkit-box-shadow: 0 0 1rem #fff inset;
+          box-shadow: 0 0 1rem #fff inset;
+  padding: 0.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Playground .UpdateCancelSection .UpdateToggler {
+  border-radius: 100%;
+  color: #909;
+  -webkit-box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+          box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
+}
+
+.Playground .UpdateCancelSection .UpdateLabel {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #909;
+}
+
 .Playground .BlogContent {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,34 +88,6 @@ img {
   color: greenyellow;
   margin: auto;
   margin-top: 1rem;
-}
-
-.Playground .BlogContent .UpdateCancelSection {
-  -webkit-box-shadow: 0 0 1rem #fff inset;
-          box-shadow: 0 0 1rem #fff inset;
-  padding: 0.5rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.Playground .BlogContent .UpdateCancelSection .UpdateToggler {
-  border-radius: 100%;
-  color: #909;
-  -webkit-box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
-          box-shadow: 0 0 1rem #fff inset, 0 0 1rem #fff;
-}
-
-.Playground .BlogContent .UpdateCancelSection .UpdateLabel {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #909;
 }
 
 .Playground .BlogContent .AddTitle {
@@ -447,10 +447,31 @@ img {
   color: red;
 }
 
-.Playground .ContentControlMsgArea .MsgArea #EmptyBlog {
+.Playground .ContentControlMsgArea .MsgArea #UploadedPercentage {
+  color: #909;
+}
+
+.Playground .ContentControlMsgArea #EmptyBlogArea #EmptyBlogIcon {
   color: #fff;
   -webkit-animation: emptyAnimation 1s ease forwards infinite alternate;
           animation: emptyAnimation 1s ease forwards infinite alternate;
+}
+
+.Playground .ContentControlMsgArea #ShareBlog #ShareBlogMsg {
+  color: #909;
+}
+
+.Playground .ContentControlMsgArea #ShareBlog #ShareBlogButton {
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  -webkit-box-shadow: 0 0 0.5rem #909;
+          box-shadow: 0 0 0.5rem #909;
+  margin-top: 1rem;
+  border-radius: 10%;
+  -webkit-animation: none;
+          animation: none;
+  color: #909;
+  font-weight: bold;
 }
 
 .Playground .ContentControlMsgArea .ResetArea {
@@ -514,8 +535,14 @@ img {
   transition: 0.1s ease;
   padding: 0.5rem 1rem;
   border-radius: 6px;
+  font-weight: bold;
+  color: green;
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;
+}
+
+.Playground .FinalisingBtns .FinalisingBtn #UpdateBtnIcon {
+  color: greenyellow;
 }
 
 .Playground .FinalisingBtns .FinalisingBtn:hover {

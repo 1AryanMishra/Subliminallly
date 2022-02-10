@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-
+import FileBase from 'react-file-base64';
 import { CreateContext } from "../CreateSection";
 
 
@@ -14,14 +14,14 @@ import { IoArrowUndoOutline } from 'react-icons/io5';
 
 function Image({ContentID}){
     const {content, setContent} = useContext(CreateContext);
-    const [imageSrc, setImageSrc] = useState(content[ContentID].content.imageSrc || '')
-    const [changeImageSrc, setChangeImageSrc] = useState(() => {
-        if(imageSrc === ''){
+    const [image, setImage] = useState(content[ContentID].content.image || '');
+    const [changeImage, setChangeImage] = useState(() => {
+        if(image === ''){
             return true;
         }
         return false;
     });
-    const [removeImageSrc, setRemoveImageSrc] = useState(false);
+    const [removeImage, setRemoveImage] = useState(false);
     const [contentControl, setContentControl] = useState(false);
     const [ImageCredit, setImageCredit] = useState(content[ContentID].content.imageCredit || '');
     const [isImageCredit, setIsImageCredit] = useState(() => {
@@ -32,19 +32,19 @@ function Image({ContentID}){
     });
 
 
-    if(removeImageSrc && imageSrc === ''){
+    if(removeImage && image === ''){
         setContent(content.filter(n => content.indexOf(n) !== ContentID));
         return null;
     }
-    else if(removeImageSrc){
+    else if(removeImage){
         return(
             <div className="ImageInputArea">
                 <p className="RemoveContentLabel">Image Removed Temporarily.</p>
                 <div className="ContentControlBtnsArea">
-                    <button className={contentControl?"ContentControlBtn":"ContentControlBtnHide"} onClick={() => setImageSrc('')}><RiDeleteBin4Line size="1rem" /></button>
+                    <button className={contentControl?"ContentControlBtn":"ContentControlBtnHide"} onClick={() => setImage('')}><RiDeleteBin4Line size="1rem" /></button>
                     <button className={contentControl?"ContentControlBtn":"ContentControlBtnHide"} onClick={() => {
                         setContentControl(!contentControl);
-                        setRemoveImageSrc(!removeImageSrc);
+                        setRemoveImage(!removeImage);
                         }}><IoArrowUndoOutline size="1rem" /></button>
                     <button className="ContentControlOpen" onClick={() => setContentControl(!contentControl)}><HiMenuAlt4 size="1rem" /></button>
                 </div>
@@ -52,17 +52,17 @@ function Image({ContentID}){
         )
     }
     else{
-        if(changeImageSrc){
+        if(changeImage){
             return(
                 <div className="ImageInputArea">
                     <div className="ContentControlBtnsArea">
                         <button className={contentControl?"ContentControlBtn":"ContentControlBtnHide"} onClick={() => {
                             setContentControl(!contentControl);
-                            setRemoveImageSrc(!removeImageSrc);
+                            setRemoveImage(!removeImage);
                             }}><IoMdRemoveCircleOutline size="1rem" /></button>
                         <button className={contentControl?"ContentControlBtn":"ContentControlBtnHide"} onClick={() => {
                             content[ContentID].content = {
-                                imageSrc : imageSrc,
+                                image : image,
                                 imageCredit : ImageCredit,
                                 position : ContentID
                             };
@@ -73,20 +73,19 @@ function Image({ContentID}){
                                 setIsImageCredit(false);
                             }
                             setContentControl(!contentControl);
-                            setChangeImageSrc(!changeImageSrc);
+                            setChangeImage(!changeImage);
                         }}><MdDoneOutline size="1rem" /></button>
                         <button className="ContentControlOpen" onClick={() => setContentControl(!contentControl)}><HiMenuAlt4 size="1rem" /></button>
                     </div>
-                    <input className="ContentInputArea" type="file" onChange={(e) => {
-                        const reader = new FileReader();
-                        reader.onload = () => {
-                            if(reader.readyState === 2){
-                                setImageSrc(reader.result);
-                            }
-                        }
-                        reader.readAsDataURL(e.target.files[0]);
-                    }}></input>
-                    <input type="text" placeholder="Wanna give Pic-Credit..." value={ImageCredit} className={imageSrc?'ImageCreditInput':'ImageCreditHide'} onChange={e => setImageCredit(e.target.value)}></input>
+                    <FileBase
+                        className="ContentInputArea"
+                        type='file'
+                        multiple = {false}
+                        onDone = {({base64}) => {
+                            setImage(base64)
+                        }}
+                    />
+                    <input type="text" placeholder="Wanna give Pic-Credit..." value={ImageCredit} className={image?'ImageCreditInput':'ImageCreditHide'} onChange={e => setImageCredit(e.target.value)}></input>
                 </div>
             )
         }
@@ -96,15 +95,15 @@ function Image({ContentID}){
                     <div className="ContentControlBtnsArea">
                         <button className={contentControl?"ContentControlBtn":"ContentControlBtnHide"} onClick={() => {
                             setContentControl(!contentControl);
-                            setRemoveImageSrc(!removeImageSrc);
+                            setRemoveImage(!removeImage);
                             }}><IoMdRemoveCircleOutline size="1rem" /></button>
                         <button className={contentControl?"ContentControlBtn":"ContentControlBtnHide"} onClick={() => {
                             setContentControl(!contentControl);
-                            setChangeImageSrc(!changeImageSrc);
+                            setChangeImage(!changeImage);
                             }}><FiEdit2 size="1rem" /></button>
                         <button className="ContentControlOpen" onClick={() => setContentControl(!contentControl)}><HiMenuAlt4 size="1rem" /></button>
                     </div>
-                    <img src={content[ContentID].content.imageSrc} className="ImgContent" alt="someImage"></img>
+                    <img src={content[ContentID].content.image} className="ImgContent" alt="someImage"></img>
                     <p className={isImageCredit?"ImageCredit":"ImageCreditHide"}>P.S.:{content[ContentID].content.imageCredit}</p>
                 </div>
             )

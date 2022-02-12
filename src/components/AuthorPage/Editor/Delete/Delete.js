@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState } from 'react';
 
 
@@ -10,7 +11,7 @@ import { FcApproval } from 'react-icons/fc';
 
 
 
-function Delete({DeleteBlogFn, DeleteAlertFn}){
+function Delete({DeleteBlogFn, title, DeleteAlertFn}){
 
     const [deleteBlogConfirmation, setDeleteBlogConfirmation] = useState(false);
 
@@ -25,8 +26,14 @@ function Delete({DeleteBlogFn, DeleteAlertFn}){
                     <p className='warningText'>Are you sure?<br/>Changes once made,<br/>CANNOT BE UNDONE!!!</p>
                     <div className='warningConfirmBtns'>
                         <button className='Yes' onClick={() => {
-                            setDeleteBlogConfirmation(true);
-                            DeleteBlogFn(true);
+                            const url = `https://subliminally.herokuapp.com/AuthorPage/delete/${title}`;
+                            //const url = `http://localhost:5000/AuthorPage/delete/${title}`;
+                            axios.delete(url)
+                            .then(res => {
+                                setDeleteBlogConfirmation(true);
+                                DeleteBlogFn(true);
+                            })
+                            .catch(err => console.log(err))
                             }}>Yes!</button>
                         <button className='No' onClick={() => {
                             setDeleteBlogConfirmation(false);

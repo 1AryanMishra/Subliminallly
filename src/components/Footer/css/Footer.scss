@@ -3,11 +3,14 @@
     box-shadow: 0 0 1em #fff;
     background: rgba(200, 200, 200, 0.5);
     display: flex;
+    padding: 3rem 2rem;
     flex-flow: column nowrap;
 
     .OtherPagesLinks{
         font-weight: bold;
         margin-left: 0.5em;
+        font-size: 1.5rem;
+        color: #707070;
         text-decoration: none;
         padding: 0.5em;
     }
@@ -15,5 +18,16 @@
     .OtherPagesLinks:hover, .OtherPagesLinks:focus{
         text-align: center;
         box-shadow: 0 0 1em rgba($color: #fff, $alpha: 1.0);
+    }
+}
+
+@media (min-width : 950px){
+    .FooterContainer{
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .OtherPagesLinks{
+            padding: 1rem 3rem;
+        }
     }
 }

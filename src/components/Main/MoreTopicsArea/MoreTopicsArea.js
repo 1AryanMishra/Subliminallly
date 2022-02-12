@@ -1,10 +1,27 @@
-import TopicCard from './TopicCard/TopicCard';
+import { useContext } from 'react';
+
+
+//Importing Blog Display Component
+import BlogDisplay from '../../BlogDisplay/BlogDisplay';
+
+
+//Importing Data Context
+import { DataContext } from '../../App/App';
 
 //CSS
 import './css/MoreTopicsArea.css';
 
 
+
+
 function MoreTopicsArea(){
+
+    const { BlogsSnippets } = useContext(DataContext);
+
+
+    if(BlogsSnippets.lenght === 0){
+        return null;
+    }
     return(
         <section className="MoreTopicsArea">
             
@@ -12,23 +29,12 @@ function MoreTopicsArea(){
 
             <div className="MidLine"></div>
 
-            <div className="GenreTypeArea">
-                <p className="GenreLabelText">Genre</p>
-                <div className="AvailableGenres">
-                    <p className="GenreType">Social</p>
-                    <p className="GenreType">Religious</p>
-                    <p className="GenreType">Politics</p>
-                    <p className="GenreType">Space</p>
-                </div>
-            </div>
-
             <div className="ShortLine"></div>
 
             <div className="TopicsArea">
-                <TopicCard/>
-                <TopicCard/>
-                <TopicCard/>
-                <TopicCard/>
+                {
+                    BlogsSnippets.map(blog => <BlogDisplay isMainTopic={false} key={blog._id} title={blog.title} content={blog.snippet} interactions={blog.interactions}/>)
+                }
             </div>
             
             <div className="ShortLine"></div>

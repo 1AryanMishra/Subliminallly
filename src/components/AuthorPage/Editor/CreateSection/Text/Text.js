@@ -2,6 +2,9 @@ import { useContext, useState } from "react";
 
 import { CreateContext } from "../CreateSection";
 
+//Importing Text Display Component
+import TextComponent from '../../../../Text/Text';
+
 //Icons
 import { HiMenuAlt4 } from 'react-icons/hi';
 import { FiEdit2 } from 'react-icons/fi';
@@ -78,7 +81,7 @@ function Text({ContentID}){
                         }}><FiEdit2 size='1rem' /></button>
                         <button className="ContentControlOpen" onClick={() => setContentControl(!contentControl)}><HiMenuAlt4 size='1rem' /></button>
                     </div>
-                    <p className="ParaContent">{content[ContentID].content}</p>
+                    <TextComponent content={content[ContentID].content}/>
                 </div>
             )
         }

@@ -1,5 +1,10 @@
 import { useState, useContext } from 'react';
-import Interact from '../../../Main/TopicArea/Interact/Interact';
+
+import axios from 'axios';
+import moment from 'moment';
+
+//Importing Blog Display Component
+import BlogDisplay from '../../../BlogDisplay/BlogDisplay';
 
 //EditContext
 import { EditContext } from '../../Editor/Editor';
@@ -13,47 +18,38 @@ import { RiDeleteBin4Line } from 'react-icons/ri';
 import Delete from '../.././Editor/Delete/Delete';
 
 
-function Post(props){
+function Post({snip}){
 
     const [moreAction, setMoreAction] = useState(false);
-    const{setEdit} = useContext(EditContext);
+    const{setEdit, setEditableContent } = useContext(EditContext);
     const [deleteAlert, setDeleteAlert] = useState(false);
     const[blogDeleted, setBlogDeleted] = useState(false);
+
 
     return(
         <div className={blogDeleted ? 'Hide':'Post'}>
             <div className='blogMoreAction'>
                 <MdOutlineMoreVert className='moreActionIcon' size='1.8rem' onClick={() => setMoreAction(!moreAction)}/>
                 <div className={moreAction ? 'showMoreAction':'showMoreAction hideMoreAction'}>
-                    <p className='PostedDate'><b>Posted : </b>05/12/2021</p>
-                    <button className='moreActionItem' onClick={() => setEdit(true)}><FiEdit2 size='2rem'/></button>
+                    <p className='PostedDate'><b>Posted </b>{moment(snip.createdAt).fromNow()}</p>
+                    <button className='moreActionItem' onClick={() => {
+                        const url = `https://subliminally.herokuapp.com/blog/${snip.title}`;
+                        //const url = `http://localhost:5000/blog/${snip.title}`;
+                        axios.get(url)
+                        .then(res => {
+                            setEditableContent(res.data[0]);
+                            setEdit(true);
+                        })
+                        .catch(err => console.log(err));
+                    }}><FiEdit2 size='2rem'/></button>
                     <button className='moreActionItem' onClick={() => setDeleteAlert(true)}><RiDeleteBin4Line size='2rem'/></button>
                 </div>
             </div>
             <hr className='rightHr'/>
-            <article className="blogSnip">
-                <h1 className="blogHeading">
-                    Heading
-                </h1>
-                <p className="blogPara">
-                    Some para blog Some para blog Some para blog 
-                    Some para blog Some para blog Some para blog 
-                    Some para blog Some para blog Some para blog 
-                    Some para blog Some para blog Some para blog 
-                    Some para blog Some para blog Some para blog 
-                    Some para blog Some para blog Some para blog 
-                    Some para blog Some para blog Some para blog 
-                    Some Some para blog Some para blog Some para blog 
-                    Some para blog Some para blog Some para blog 
-                    Some para blog Some para blog Some para blog 
-                    Some
-                </p>
-            </article>
-            <button className="readMore">More...</button>
+            <BlogDisplay isMainTopic = {false} title={snip.title} content={snip.snippet} interactions={snip.interactions}/>
             <hr className='leftHr'/>
-            <Interact likes={props.likes} dislikes={props.dislikes}/>
             
-            {deleteAlert?<Delete DeleteBlogFn = {setBlogDeleted} DeleteAlertFn = {setDeleteAlert}/>:null}
+            {deleteAlert?<Delete DeleteBlogFn = {setBlogDeleted} title={snip.title} DeleteAlertFn = {setDeleteAlert}/>:null}
 
         </div>
     )

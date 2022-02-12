@@ -42,6 +42,11 @@
           flex-direction: column;
 }
 
+#Posts .Post .BlogContent {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 #Posts .Post .blogMoreAction {
   display: -webkit-box;
   display: -ms-flexbox;

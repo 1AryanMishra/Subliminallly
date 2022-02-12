@@ -29,13 +29,13 @@ import '../../css/CreateSection.css';
 export const EditSectionContext = createContext();
 
 
-function Edit(props){
+function Edit(){
 
-    const { setEdit } = useContext(EditContext);
+    const { setEdit, editableContent } = useContext(EditContext);
 
-    const [content, setContent] = useState(props.content || []);
+    const [content, setContent] = useState(editableContent.content);
     const [titleEdit, setTitleEdit] = useState(true);
-    const [mainTitle, setMainTitle] = useState('Title of the Blog');
+    const [mainTitle, setMainTitle] = useState(editableContent.title);
     const [post, setPost] = useState(false);
     const [posted, setPosted] = useState(false);
     const [append, setAppend] = useState(false);
@@ -69,25 +69,25 @@ function Edit(props){
         
 
         try{
-            const res = await axios.post('http://localhost:5000/AuthorPage/updateBlog', {
-                title : mainTitle,
+            const url = 'https://subliminally.herokuapp.com/AuthorPage/updateBlog';
+            //const url = 'http://localhost:5000/AuthorPage/updateBlog';
+            const res = await axios.post(url, {
+                title : editableContent.title,
+                newTitle : mainTitle,
                 content : content
             }, {
                 onUploadProgress : progressEvent => {
                     setUploadPercentage(parseInt(Math.round((progressEvent.loaded * 100) / progressEvent.total)))
             }});
 
-            if (res.data.posted) {
-                var titleString = mainTitle;
-                for(let i = 0; i<mainTitle.length; i++){
-                    if(titleString[i] === ' '){
-                        titleString[i] = '+';
-                    }
-                }
-                let link = `http://localhost:5000/?blog=${titleString}`;
-                console.log(link);
-                setBlogLink(link);
+            if (res.data.updated) {
+                setBlogLink(res.data.blogLink);
                 setPosted(true);
+            }
+            else{
+                setBlogLink('');
+                setPost(false);
+                setRetry(true);
             }
         }
         catch(err){
@@ -134,7 +134,7 @@ function Edit(props){
                                     if(c){
                                         if(c.type === "p"){
                                             return(
-                                                <div className="Content-Append-Area">
+                                                <div key={uuid()} className="Content-Append-Area">
                                                     <Append ContentID={index} key={uuid()}/>
                                                     <Text ContentID={index} key={c.key}/>
                                                 </div>
@@ -142,7 +142,7 @@ function Edit(props){
                                         }
                                         else if(c.type === "i"){
                                             return(
-                                                <div className="Content-Append-Area">
+                                                <div className="Content-Append-Area" key={uuid()}>
                                                     <Append ContentID={index} key={uuid()}/>
                                                     <Image ContentID={index} key={c.key}/>
                                                 </div>
@@ -150,7 +150,7 @@ function Edit(props){
                                         }
                                         else if(c.type === 'v'){
                                             return(
-                                                <div className="Content-Append-Area">
+                                                <div className="Content-Append-Area" key={uuid()}>
                                                     <Append ContentID={index} key={uuid()}/>
                                                     <Video ContentID={index} key={c.key}/>
                                                 </div>
@@ -222,7 +222,7 @@ function Edit(props){
                 </div> : null}
 
                 {post ? <div className='MsgArea' id='UploadedArea'>
-                    <p className='msg' id='UploadPercentage'>Uploaded {posted ? 100 : uploadPercentage}</p>
+                    <p className='msg' id='UploadPercentage'>Uploaded {posted ? 100 : uploadPercentage}%</p>
                 </div> : null}
 
             </section>

@@ -1,7 +1,7 @@
 .MainContainer {
   -webkit-box-shadow: 0 0 1em #fff;
           box-shadow: 0 0 1em #fff;
-  margin: 1em 0;
+  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,10 +22,13 @@
     display: none;
   }
   .MainContainer .MoreTopicsAreaContainer {
-    max-width: 30%;
+    width: 30%;
   }
   .MainContainer .ContentContainer {
-    margin: auto 1rem;
+    -webkit-box-shadow: 0 0 1rem #fff;
+            box-shadow: 0 0 1rem #fff;
+    margin: auto;
+    width: 60%;
   }
 }
 /*# sourceMappingURL=Main.css.map */

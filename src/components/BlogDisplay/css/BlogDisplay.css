@@ -1,0 +1,37 @@
+.BlogContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 0 1rem #fff;
+          box-shadow: 0 0 1rem #fff;
+}
+
+.BlogContent .BlogTitle {
+  font-size: 1.6rem;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.BlogContent .ReadMoreBtn {
+  margin: auto;
+  margin-right: 1rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #fff;
+  background: #909090;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.BlogContent .ReadMoreBtn:hover {
+  -webkit-box-shadow: 0 0 0.5rem #fff inset;
+          box-shadow: 0 0 0.5rem #fff inset;
+}
+/*# sourceMappingURL=BlogDisplay.css.map */

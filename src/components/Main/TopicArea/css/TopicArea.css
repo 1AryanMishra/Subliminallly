@@ -1,7 +1,5 @@
 .TopicArea {
   margin: auto;
-  -webkit-box-shadow: 0 0 2em #fff;
-          box-shadow: 0 0 2em #fff;
   padding: 1em;
   max-width: 95%;
   display: -webkit-box;
@@ -11,13 +9,5 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-}
-
-.TopicArea .TopicTitle {
-  margin: 0.5rem 0;
-  -webkit-box-shadow: 0 0 1em #fff inset;
-          box-shadow: 0 0 1em #fff inset;
-  padding: 0.5rem;
-  text-align: center;
 }
 /*# sourceMappingURL=TopicArea.css.map */

@@ -115,13 +115,14 @@
 }
 
 .AuthorPage .EditorSection {
-  margin: 1em auto;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
+  padding-top: 1rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -218,7 +219,13 @@
 }
 
 @media (min-width: 950px) {
+  .AuthorPage .EditorSection {
+    -webkit-box-shadow: 0 0 1rem #fff;
+            box-shadow: 0 0 1rem #fff;
+    max-width: 60%;
+  }
   .AuthorPage .justPlaceholder {
+    max-width: 20%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

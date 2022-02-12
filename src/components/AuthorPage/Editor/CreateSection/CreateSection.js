@@ -70,7 +70,9 @@ function CreateSection(){
         
 
         try{
-            const res = await axios.post('https://subliminally.herokuapp.com/AuthorPage/newBlog', {
+            const url = 'https://subliminally.herokuapp.com/AuthorPage/newBlog';
+            //const url = 'http://localhost:5000/AuthorPage/newBlog';
+            const res = await axios.post(url, {
                 title : mainTitle,
                 content : content
             }, {

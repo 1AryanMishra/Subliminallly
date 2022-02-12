@@ -1,6 +1,6 @@
 .MainContainer{
     box-shadow: 0 0 1em #fff;
-    margin: 1em 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
 }
@@ -14,11 +14,13 @@
         }
 
         .MoreTopicsAreaContainer{
-            max-width: 30%;
+            width: 30%;
         }
 
         .ContentContainer{
-            margin: auto 1rem;
+            box-shadow: 0 0 1rem #fff;
+            margin: auto;
+            width: 60%;
         }
     }
 }

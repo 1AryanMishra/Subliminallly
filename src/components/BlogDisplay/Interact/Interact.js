@@ -8,11 +8,11 @@ import { FcLike, FcLikePlaceholder, FcDislike } from 'react-icons/fc';
 import { BsShare } from 'react-icons/bs';
 import { RiDislikeLine } from 'react-icons/ri';
 
-function Interact(props){
+function Interact({ likes, dislikes }){
 
-    const [postLikes, setPostLikes] = useState(props.likes);
+    const [postLikes, setPostLikes] = useState(likes);
     const [postLiked, setPostLiked] = useState(false);
-    const [postDislikes, setPostDislikes] = useState(props.dislikes);
+    const [postDislikes, setPostDislikes] = useState(dislikes);
     const [postDisliked, setPostDisliked] = useState(false);
 
     async function ShareTopic(){

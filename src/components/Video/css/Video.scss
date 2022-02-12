@@ -1,0 +1,14 @@
+.VideoContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .VideoFrame{
+        width: 100%;
+        box-shadow: 0 0 1rem #fff;
+    }
+
+    .VideoCredit{
+        margin: 0.2rem auto;
+    }
+}

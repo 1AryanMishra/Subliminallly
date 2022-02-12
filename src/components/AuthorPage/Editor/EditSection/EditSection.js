@@ -7,11 +7,11 @@ import {EditContext} from '../Editor';
 
 function EditSection(){
 
-    const {edit, editableContent} = useContext(EditContext);
+    const { edit } = useContext(EditContext);
 
     return(
         <section id='EditSection'>
-            {edit?<Edit content={editableContent}/>:<SearchedBlog/>}
+            {edit?<Edit/>:<SearchedBlog/>}
         </section>
 
     )

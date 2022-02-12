@@ -61,11 +61,11 @@
 @media (min-width:950px){
 
     .MoreTopicsArea{
-        box-shadow: 0 0 1rem #fff;
         padding: 1rem;
         margin: 0;
         position: sticky;
         top: 0;
+        bottom: 0;
 
         .MidLine{
             width: 80%;

@@ -39,7 +39,7 @@ function App(){
                     titleString = titleString + mainBlog[i];
                 }
             }
-            const url = `https://subliminally.herokuapp.com/blog/${titleString}`;
+            const url = `https://subliminally.herokuapp.com/blog/${mainBlog}`;
             //const url = `http://localhost:5000/blog/${mainBlog}`;
             axios.get(url)
             .then(res => {

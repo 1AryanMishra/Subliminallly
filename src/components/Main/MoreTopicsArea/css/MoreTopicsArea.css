@@ -79,6 +79,15 @@
   -ms-scroll-snap-type: x mandatory;
       scroll-snap-type: x mandatory;
   padding: 1em;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.MoreTopicsArea .TopicsArea .BlogContent {
+  scroll-snap-align: center;
+  min-width: 100%;
+  margin: auto 1rem;
 }
 
 @media (min-width: 950px) {

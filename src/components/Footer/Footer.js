@@ -6,9 +6,9 @@ import './css/Footer.css';
 function Footer(){
     return(
         <footer className="FooterContainer">
-            <Link to="/"><p className="OtherPagesLinks">Home</p></Link>
-            <Link to="/About"><p className="OtherPagesLinks">About Us</p></Link>
-            <Link to="/AuthorPage"><p className="OtherPagesLinks">Write Here</p></Link>
+            <Link to="/" className="OtherPagesLinks"><p>Home</p></Link>
+            <Link to="/About" className="OtherPagesLinks"><p>About Us</p></Link>
+            <Link to="/AuthorPage" className="OtherPagesLinks"><p>Write Here</p></Link>
         </footer>
     )
 }

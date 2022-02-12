@@ -83,13 +83,12 @@
 
 @media (min-width: 950px) {
   .MoreTopicsArea {
-    -webkit-box-shadow: 0 0 1rem #fff;
-            box-shadow: 0 0 1rem #fff;
     padding: 1rem;
     margin: 0;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
+    bottom: 0;
   }
   .MoreTopicsArea .MidLine {
     width: 80%;

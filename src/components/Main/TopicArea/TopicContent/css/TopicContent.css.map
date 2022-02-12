@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,CAAA;EACT,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,aAAa;CAU3B;;AAZD,AAII,aAJS,CAIT,UAAU,CAAA;EACN,SAAS,EAAE,IAAI;CAClB;;AANL,AAQI,aARS,CAQT,WAAW,CAAA;EACP,UAAU,EAAE,qBAAqB;EACjC,OAAO,EAAE,OAAO;CACnB",
-    "sources": [
-        "TopicContent.scss"
-    ],
-    "names": [],
-    "file": "TopicContent.css"
-}

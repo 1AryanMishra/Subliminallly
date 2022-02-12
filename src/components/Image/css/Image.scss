@@ -1,0 +1,15 @@
+.ImageContentArea{
+    display : flex;
+    flex-direction : column;
+    align-items: center;
+    margin: 0.5rem auto;
+
+    .ImgContent{
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .ImageCredit{
+        margin: 0.2 auto;
+    }
+}

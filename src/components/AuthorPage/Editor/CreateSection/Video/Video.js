@@ -2,6 +2,10 @@ import { useState, useContext } from "react";
 
 import { CreateContext } from "../CreateSection";
 
+//Importing Video Display Component
+import VideoComponent from '../../../../Video/Video';
+
+
 
 //Icons
 import { HiMenuAlt4 } from 'react-icons/hi';
@@ -24,12 +28,6 @@ function Video({contents, setContentFn, ContentID}){
     const [removeVideo, setRemoveVideo] = useState(false);
     const [contentControl, setContentControl] = useState(false);
     const [videoCredit, setVideoCredit] = useState(content[ContentID].content.videoCredit || '');
-    const [isVideoCredit, setIsVideoCredit] = useState(() => {
-        if(videoCredit === ''){
-            return false;
-        }
-        return true;
-    });
 
 
     function GetVideoId(link){
@@ -86,12 +84,6 @@ function Video({contents, setContentFn, ContentID}){
                                 video : video,
                                 videoCredit : videoCredit
                             };
-                            if(videoCredit !== ''){
-                                setIsVideoCredit(true);
-                            }
-                            else{
-                                setIsVideoCredit(false);
-                            }
                             setContentControl(!contentControl);
                             setChangeVideo(!changeVideo);
                             }}><MdDoneOutline size="1rem" /></button>
@@ -116,8 +108,7 @@ function Video({contents, setContentFn, ContentID}){
                         }}><FiEdit2 size="1rem" /></button>
                         <button className="ContentControlOpen" onClick={() => setContentControl(!contentControl)}><HiMenuAlt4 size="1rem" /></button>
                     </div>
-                    <iframe className="VideoFrame" src={`https://www.youtube.com/embed/${video}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                    <p className={isVideoCredit?"VideoCredit":"VideoCreditHide"}>Source : {content[ContentID].content.videoCredit}</p>
+                    <VideoComponent video={video} source={content[ContentID].content.videoCredit}/>
                 </div>
             )
         }

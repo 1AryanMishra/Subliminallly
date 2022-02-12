@@ -7,9 +7,8 @@ function Auth(){
 
     function SignInFn(){
         setTimeout(() => {
-            console.log("Fetching Firebase Google SignIn");
             setSignedIn(true);
-        }, 2000);
+        }, 1000);
     }
 
     return(

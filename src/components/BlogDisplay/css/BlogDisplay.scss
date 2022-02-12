@@ -1,0 +1,27 @@
+.BlogContent{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 1rem #fff;
+
+    .BlogTitle{
+        font-size: 1.6rem;
+        margin: 0.5rem auto;
+        padding: 0.5rem;
+        padding-bottom: 0;
+        text-align: center;
+    }
+
+    .ReadMoreBtn{
+        margin: auto;
+        margin-right: 1rem;
+        padding: 0.3rem 0.5rem;
+        border-radius: 6px;
+        font-weight: bold;
+        color: #fff;
+        background: #909090;
+        transition: 0.2s ease;
+    }
+    .ReadMoreBtn:hover{
+        box-shadow: 0 0 0.5rem #fff inset;
+    }
+}

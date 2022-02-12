@@ -2,6 +2,9 @@ import { useContext, useState } from "react";
 import FileBase from 'react-file-base64';
 import { CreateContext } from "../CreateSection";
 
+//Importing Image Display Component
+import ImageComponent from '../../../../Image/Image';
+
 
 //Icons
 import { HiMenuAlt4 } from 'react-icons/hi';
@@ -24,12 +27,6 @@ function Image({ContentID}){
     const [removeImage, setRemoveImage] = useState(false);
     const [contentControl, setContentControl] = useState(false);
     const [ImageCredit, setImageCredit] = useState(content[ContentID].content.imageCredit || '');
-    const [isImageCredit, setIsImageCredit] = useState(() => {
-        if(ImageCredit === ''){
-            return false;
-        }
-        return true;
-    });
 
 
     if(removeImage && image === ''){
@@ -63,15 +60,8 @@ function Image({ContentID}){
                         <button className={contentControl?"ContentControlBtn":"ContentControlBtnHide"} onClick={() => {
                             content[ContentID].content = {
                                 image : image,
-                                imageCredit : ImageCredit,
-                                position : ContentID
+                                imageCredit : ImageCredit
                             };
-                            if(ImageCredit !== ''){
-                                setIsImageCredit(true);
-                            }
-                            else{
-                                setIsImageCredit(false);
-                            }
                             setContentControl(!contentControl);
                             setChangeImage(!changeImage);
                         }}><MdDoneOutline size="1rem" /></button>
@@ -103,8 +93,7 @@ function Image({ContentID}){
                             }}><FiEdit2 size="1rem" /></button>
                         <button className="ContentControlOpen" onClick={() => setContentControl(!contentControl)}><HiMenuAlt4 size="1rem" /></button>
                     </div>
-                    <img src={content[ContentID].content.image} className="ImgContent" alt="someImage"></img>
-                    <p className={isImageCredit?"ImageCredit":"ImageCreditHide"}>P.S.:{content[ContentID].content.imageCredit}</p>
+                    <ImageComponent image = {content[ContentID].content.image} credit = {content[ContentID].content.imageCredit}/>
                 </div>
             )
         }
